@@ -1,0 +1,1670 @@
+diff -x .pc -x debian -x blib -x .git -uNr sauron/addgroup sauron-0.7.3/addgroup
+--- sauron/addgroup	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/addgroup	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # addgroup - utility to create users
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000,2002.
+-# $Id: addgroup,v 1.8 2003/12/28 19:29:11 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/addhosts sauron-0.7.3/addhosts
+--- sauron/addhosts	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/addhosts	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # addhosts - utility to add host records
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001,2003.
+-# $Id: addhosts,v 1.12 2003/12/28 19:29:11 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/adduser sauron-0.7.3/adduser
+--- sauron/adduser	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/adduser	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # adduser - utility to create users
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2003.
+-# $Id: adduser,v 1.20 2005/03/29 09:26:41 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Time::Local;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/cgi/browser.cgi sauron-0.7.3/cgi/browser.cgi
+--- sauron/cgi/browser.cgi	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/cgi/browser.cgi	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ #!/usr/bin/perl -I/usr/local/sauron
+ #
+ # browser.cgi
+-# $Id: browser.cgi,v 1.21 2005/02/01 05:25:12 tjko Exp $
++# $Id$
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>, 2001-2005.
+ # All Rights Reserved.
+diff -x .pc -x debian -x blib -x .git -uNr sauron/cgi/sauron.cgi sauron-0.7.3/cgi/sauron.cgi
+--- sauron/cgi/sauron.cgi	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/cgi/sauron.cgi	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ #!/usr/bin/perl -I/usr/local/sauron
+ #
+ # sauron.cgi
+-# $Id: sauron.cgi,v 1.204 2005/01/27 09:24:44 tjko Exp $
++# $Id$
+ # [едц~]
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>, 2000-2005.
+ # All Rights Reserved.
+@@ -25,7 +25,7 @@
+ 
+ load_config();
+ 
+-$SAURON_CGI_VER = ' $Revision: 1.204 $ $Date: 2005/01/27 09:24:44 $ ';
++$SAURON_CGI_VER = ' $Revision$ $Date$ ';
+ $debug_mode = $SAURON_DEBUG_MODE;
+ #$|=1;
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/ChangeLog sauron-0.7.3/ChangeLog
+--- sauron/ChangeLog	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/ChangeLog	2015-05-29 12:25:59.000000000 +0300
+@@ -1,4 +1,4 @@
+-$Id: ChangeLog,v 1.104 2010/02/18 09:19:31 tjko Exp $
++$Id$
+ 
+ 0.7.3
+ 	- fixed reserved and expired host not to be included in dhcp-pool by
+diff -x .pc -x debian -x blib -x .git -uNr sauron/check-pending sauron-0.7.3/check-pending
+--- sauron/check-pending	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/check-pending	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # check-pending -- utility (to be run from cron) to check for pending host
+ #                  changes in Sauron database
+ #
+-# $Id: check-pending,v 1.7 2003/03/19 09:18:05 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/config-browser.in sauron-0.7.3/config-browser.in
+--- sauron/config-browser.in	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/config-browser.in	2015-05-26 22:50:01.000000000 +0300
+@@ -1,7 +1,7 @@
+ #
+ # Sample browser.cgi configuration file
+ #
+-# $Id: config-browser.in,v 1.6 2003/12/28 19:29:11 tjko Exp $
++# $Id$
+ #
+ 
+ #########################################################################
+diff -x .pc -x debian -x blib -x .git -uNr sauron/config.in sauron-0.7.3/config.in
+--- sauron/config.in	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/config.in	2015-05-26 22:50:01.000000000 +0300
+@@ -1,7 +1,7 @@
+ #
+ # Sauron sample configuration
+ #
+-# $Id: config.in,v 1.39 2007/10/15 07:40:30 tjko Exp $
++# $Id$
+ #
+ 
+ #########################################################################
+diff -x .pc -x debian -x blib -x .git -uNr sauron/configure.in sauron-0.7.3/configure.in
+--- sauron/configure.in	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/configure.in	2015-05-29 12:25:59.000000000 +0300
+@@ -1,4 +1,4 @@
+-dnl $Id: configure.in,v 1.4 2003/06/24 17:45:14 tjko Exp $
++dnl $Id$
+ dnl 
+ dnl Process this file with autoconf to produce a configure script.
+ AC_INIT(sauron)
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/additional-ether-codes.txt sauron-0.7.3/contrib/additional-ether-codes.txt
+--- sauron/contrib/additional-ether-codes.txt	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/additional-ether-codes.txt	2015-05-29 12:25:59.000000000 +0300
+@@ -3,10 +3,10 @@
+       http://standards.ieee.org/regauth/oui/
+ 
+ 
+-$Revision: 1.13 $
+-$Date: 2002/04/18 08:08:52 $
+-$Author: tjko $
+-$Id: additional-ether-codes.txt,v 1.13 2002/04/18 08:08:52 tjko Exp $
++$Revision$
++$Date$
++$Author$
++$Id$
+ 
+ 
+ 0000E1  Hitachi Wavelan
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/dhcpd-lease-view sauron-0.7.3/contrib/dhcpd-lease-view
+--- sauron/contrib/dhcpd-lease-view	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/dhcpd-lease-view	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ #!/usr/bin/perl -w
+ #
+-# $Id: dhcpd-lease-view,v 1.2 2005/02/15 09:03:07 tjko Exp $
++# $Id$
+ #
+ # A dhcpd.leases file viewing utility -- mesrik@cc.jyu.fi
+ #
+@@ -20,7 +20,7 @@
+ $debug = 0;
+ 
+ $0 =~ s/.*\///o; # weed the path
+-$version = '$Id: dhcpd-lease-view,v 1.2 2005/02/15 09:03:07 tjko Exp $';
++$version = '$Id$';
+ 
+ $now = strftime "%Y/%m/%d %H:%M:%S", gmtime;
+ %counter = ();
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/Ethernet.txt sauron-0.7.3/contrib/Ethernet.txt
+--- sauron/contrib/Ethernet.txt	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/Ethernet.txt	2015-05-29 12:25:59.000000000 +0300
+@@ -1,9 +1,9 @@
+ List of codes used on 802.3 and Ethernet networks.
+ 
+-$Revision: 2.83 $
+-$Date: 1999/03/09 11:36:19 $
+-$Author: map $
+-$Id: Ethernet.txt,v 2.83 1999/03/09 11:36:19 map Exp $
++$Revision$
++$Date$
++$Author$
++$Id$
+ 
+ 
+ This file contains collected information on the various codes used on
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/htmldoc-sql sauron-0.7.3/contrib/htmldoc-sql
+--- sauron/contrib/htmldoc-sql	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/htmldoc-sql	2015-05-29 12:25:59.000000000 +0300
+@@ -4,7 +4,7 @@
+ #                definitions. (bugs: expects cleanly formatted SQL as input)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001.
+-# $Id: htmldoc-sql,v 1.3 2003/01/11 20:18:52 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/iplist.cgi sauron-0.7.3/contrib/iplist.cgi
+--- sauron/contrib/iplist.cgi	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/iplist.cgi	2015-05-26 19:45:43.000000000 +0300
+@@ -9,7 +9,7 @@
+ #
+ # example: http://your.server/cgi-bin/iplist.cgi?mask=^foo
+ #
+-# $Id: iplist.cgi,v 1.1 2004/04/07 10:03:36 tjko Exp $
++# $Id$
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>, 2004.
+ # All Rights Reserved.
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/kerberos-auth sauron-0.7.3/contrib/kerberos-auth
+--- sauron/contrib/kerberos-auth	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/kerberos-auth	2015-05-29 12:25:59.000000000 +0300
+@@ -11,7 +11,7 @@
+ #   -1 = authentication failed
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: kerberos-auth,v 1.2 2003/01/14 22:12:05 tjko Exp $
++# $Id$
+ #
+ 
+ # uncomment to explicitly specify kerberos realm to kinit
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/named-restart sauron-0.7.3/contrib/named-restart
+--- sauron/contrib/named-restart	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/named-restart	2015-05-26 19:45:53.000000000 +0300
+@@ -3,7 +3,7 @@
+ # named-restart   -- script to restart/reload named and monitor if any
+ #                    errors occured.
+ #
+-# $Id: named-restart,v 1.1 2001/05/06 18:39:34 tjko Exp $
++# $Id$
+ #
+ 
+ LOGFILE=/var/log/daemon.log
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/netnames-jyu.pl sauron-0.7.3/contrib/netnames-jyu.pl
+--- sauron/contrib/netnames-jyu.pl	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/netnames-jyu.pl	2015-05-26 19:45:56.000000000 +0300
+@@ -10,7 +10,7 @@
+ #  Net 192.168  Testing network
+ #  Net 192.168.1.0/27  Testing network...
+ #
+-# $Id: netnames-jyu.pl,v 1.4 2001/05/02 15:44:07 tjko Exp $
++# $Id$
+ #
+ use Net::Netmask;
+ use Getopt::Std;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/contrib/sauron-backup sauron-0.7.3/contrib/sauron-backup
+--- sauron/contrib/sauron-backup	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/contrib/sauron-backup	2015-05-26 19:46:06.000000000 +0300
+@@ -2,7 +2,7 @@
+ #
+ # sauron-backup   -- script to backup sauron database daily (from cron)
+ #
+-# $Id: sauron-backup,v 1.1 2001/05/06 18:39:34 tjko Exp $
++# $Id$
+ #
+ 
+ BACKUPCMD="pg_dump -h localhost sauron"
+diff -x .pc -x debian -x blib -x .git -uNr sauron/createtables sauron-0.7.3/createtables
+--- sauron/createtables	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/createtables	2015-05-29 12:25:59.000000000 +0300
+@@ -4,7 +4,7 @@
+ #                 tables for Sauron
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2002-2005.
+-# $Id: createtables,v 1.11 2005/05/13 05:34:17 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/delgroup sauron-0.7.3/delgroup
+--- sauron/delgroup	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/delgroup	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # delgroup - utility to delete user groups
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: delgroup,v 1.2 2003/12/28 19:29:11 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/deluser sauron-0.7.3/deluser
+--- sauron/deluser	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/deluser	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # deluser - utility to delete users
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2003.
+-# $Id: deluser,v 1.10 2003/12/28 19:29:11 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/doc/CGIutil.txt sauron-0.7.3/doc/CGIutil.txt
+--- sauron/doc/CGIutil.txt	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/doc/CGIutil.txt	2015-05-26 19:46:23.000000000 +0300
+@@ -1,4 +1,4 @@
+-$Id: CGIutil.txt,v 1.1 2005/05/21 06:21:39 tjko Exp $
++$Id$
+ 
+ 
+ Form declarations:
+diff -x .pc -x debian -x blib -x .git -uNr sauron/doc/manual.sgml sauron-0.7.3/doc/manual.sgml
+--- sauron/doc/manual.sgml	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/doc/manual.sgml	2015-05-26 19:46:31.000000000 +0300
+@@ -21,7 +21,7 @@
+   <bookinfo>
+     <title>Sauron</>
+     <subtitle>User Guide</>
+-    <date>$Date: 2003/04/14 19:29:23 $</>
++    <date>$Date$</>
+     <authorgroup>
+       <author>
+ 	<firstname>Timo</>
+diff -x .pc -x debian -x blib -x .git -uNr sauron/doc/overview.eps sauron-0.7.3/doc/overview.eps
+--- sauron/doc/overview.eps	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/doc/overview.eps	2015-05-26 19:46:49.000000000 +0300
+@@ -732,12 +732,12 @@
+ grestore
+ /Helvetica-ISOLatin1Encoding findfont
+ 10 scalefont setfont
+-($Id: overview.gd,v 1.2 2001/03/01 21:56:58 tjko Exp $) stringwidth
++($Id$) stringwidth
+ pop 2 div neg
+ 130 add 754 moveto
+ gsave
+ 1 -1 scale
+-($Id: overview.gd,v 1.2 2001/03/01 21:56:58 tjko Exp $) show
++($Id$) show
+ grestore
+ %%Trailer
+ %%EOF
+diff -x .pc -x debian -x blib -x .git -uNr sauron/doc/overview.gd sauron-0.7.3/doc/overview.gd
+--- sauron/doc/overview.gd	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/doc/overview.gd	2015-05-26 19:46:56.000000000 +0300
+@@ -121,7 +121,7 @@
+ 
+ Comment 56
+ {
+-	{ Name "$Id: overview.gd,v 1.3 2001/03/06 05:24:40 tjko Exp $" }
++	{ Name "$Id$" }
+ 	{ Annotation "" }
+ 	{ Parent 0 }
+ 	{ Index "" }
+diff -x .pc -x debian -x blib -x .git -uNr sauron/doc/relations.eps sauron-0.7.3/doc/relations.eps
+--- sauron/doc/relations.eps	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/doc/relations.eps	2015-05-26 19:47:02.000000000 +0300
+@@ -1141,12 +1141,12 @@
+ grestore
+ /Helvetica-ISOLatin1Encoding findfont
+ 10 scalefont setfont
+-($Id: relations.gd,v 1.2 2001/03/01 21:56:59 tjko Exp $) stringwidth
++($Id$) stringwidth
+ pop 2 div neg
+ 140 add 904 moveto
+ gsave
+ 1 -1 scale
+-($Id: relations.gd,v 1.2 2001/03/01 21:56:59 tjko Exp $) show
++($Id$) show
+ grestore
+ %%Trailer
+ %%EOF
+diff -x .pc -x debian -x blib -x .git -uNr sauron/doc/relations.gd sauron-0.7.3/doc/relations.gd
+--- sauron/doc/relations.gd	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/doc/relations.gd	2015-05-26 19:47:06.000000000 +0300
+@@ -225,7 +225,7 @@
+ 
+ Comment 102
+ {
+-	{ Name "$Id: relations.gd,v 1.3 2001/03/06 05:24:41 tjko Exp $" }
++	{ Name "$Id$" }
+ 	{ Annotation "" }
+ 	{ Parent 0 }
+ 	{ Index "" }
+diff -x .pc -x debian -x blib -x .git -uNr sauron/expire-hosts sauron-0.7.3/expire-hosts
+--- sauron/expire-hosts	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/expire-hosts	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # expire-hosts - utility to expire hosts w/o recent dhcp activity
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2002,2003.
+-# $Id: expire-hosts,v 1.8 2006/02/23 09:43:17 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/export-by-group sauron-0.7.3/export-by-group
+--- sauron/export-by-group	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/export-by-group	2015-05-29 12:25:59.000000000 +0300
+@@ -4,7 +4,7 @@
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2004.
+ # Modifications Riku Meskanen <mesrik@iki.fi> 2005.
+-# $Id: export-by-group,v 1.1 2005/12/06 05:32:12 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/export-hosts sauron-0.7.3/export-hosts
+--- sauron/export-hosts	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/export-hosts	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # export-hosts  generates list of IPs in use for given neworks
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2004.
+-# $Id: export-hosts,v 1.1 2004/08/02 05:50:13 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/export-ip-list sauron-0.7.3/export-ip-list
+--- sauron/export-ip-list	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/export-ip-list	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # export-ip-list  generates list of IPs in use for given neworks
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2004.
+-# $Id: export-ip-list,v 1.4 2004/04/07 09:43:00 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/export-networks sauron-0.7.3/export-networks
+--- sauron/export-networks	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/export-networks	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # export-networks  generates /etc/networks file (from given server)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001,2003.
+-# $Id: export-networks,v 1.7 2003/12/28 19:29:11 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/export-vmps sauron-0.7.3/export-vmps
+--- sauron/export-vmps	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/export-vmps	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # export-vmps  generates VMPS configuration file (from given server)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: export-vmps,v 1.5 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/generatehosts sauron-0.7.3/generatehosts
+--- sauron/generatehosts	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/generatehosts	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # generatehosts - utility to add host records
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2004.
+-# $Id: generatehosts,v 1.9 2004/10/28 07:12:41 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/import sauron-0.7.3/import
+--- sauron/import	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/import	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # import - imports BIND configuration/databases
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2003.
+-# $Id: import,v 1.40 2004/01/19 11:36:05 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Net::Netmask;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/import-dhcp sauron-0.7.3/import-dhcp
+--- sauron/import-dhcp	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/import-dhcp	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # import-dhcp - imports ISC DHCPD configuration
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2002,2003.
+-# $Id: import-dhcp,v 1.12 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Net::Netmask;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/import-ethers sauron-0.7.3/import-ethers
+--- sauron/import-ethers	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/import-ethers	2015-05-29 12:25:59.000000000 +0300
+@@ -4,7 +4,7 @@
+ #                from text file (Ethernet.txt or IEEE's oui.txt)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2004.
+-# $Id: import-ethers,v 1.12 2004/01/03 23:59:50 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/import-jyu sauron-0.7.3/import-jyu
+--- sauron/import-jyu	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/import-jyu	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # import-jyu - imports nonstandard records from .hosts files
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000.
+-# $Id: import-jyu,v 1.26 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ # fileformat (similar to BIND Master File format):
+ # {<domain>|@|<blank>} [<ignored (ttl)>] [<ignored (class)] <type> <rdata>
+diff -x .pc -x debian -x blib -x .git -uNr sauron/import-nets sauron-0.7.3/import-nets
+--- sauron/import-nets	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/import-nets	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # import-nets -- imports (updates) networks (and VLANs) from a CSV file
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: import-nets,v 1.5 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ use Getopt::Long;
+ use Sauron::DB;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/import-roots sauron-0.7.3/import-roots
+--- sauron/import-roots	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/import-roots	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # import-roots  imports root servers from named.roots (named.ca) file.
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id: import-roots,v 1.11 2008/03/31 08:38:49 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/import-zone sauron-0.7.3/import-zone
+--- sauron/import-zone	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/import-zone	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # import-zone - imports DNS zone from file or directly from DNS
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: import-zone,v 1.4 2010/02/18 09:12:42 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Net::Netmask;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/init/drop_tables.sql sauron-0.7.3/init/drop_tables.sql
+--- sauron/init/drop_tables.sql	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/init/drop_tables.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* drop_tables.sql
+  *
+- * $Id: drop_tables.sql,v 1.5 2000/10/01 10:13:31 tjko Exp $
++ * $Id$
+  */
+ 
+ DROP TABLE rr_a;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/init/full-privileges.sql sauron-0.7.3/init/full-privileges.sql
+--- sauron/init/full-privileges.sql	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/init/full-privileges.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* full-privileges.sql  - code to grant user full privileges to the database
+  *
+- * $Id: full-privileges.sql,v 1.2 2000/07/30 22:51:18 tjko Exp $
++ * $Id$
+  */
+ 
+ GRANT ALL ON groups TO :user:;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/init/tables.sql sauron-0.7.3/init/tables.sql
+--- sauron/init/tables.sql	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/init/tables.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* Sauron table templates
+  *
+- * $Id: tables.sql,v 1.12 2001/01/06 00:26:14 tjko Exp $
++ * $Id$
+  */
+ 
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/keygen sauron-0.7.3/keygen
+--- sauron/keygen	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/keygen	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # keygen -- utility for creating TSIG/DNSSEC keys
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2005.
+-# $Id: keygen,v 1.4 2005/01/28 08:22:07 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/last sauron-0.7.3/last
+--- sauron/last	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/last	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # last -- utlity to display lastlog info
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id: last,v 1.9 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Makefile.in sauron-0.7.3/Makefile.in
+--- sauron/Makefile.in	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/Makefile.in	2015-05-29 12:25:59.000000000 +0300
+@@ -1,5 +1,5 @@
+ #########################################################################
+-# $Id: Makefile.in,v 1.70 2008/02/28 08:37:51 tjko Exp $ 
++# $Id$ 
+ # 
+ # Makefile for sauron
+ #
+diff -x .pc -x debian -x blib -x .git -uNr sauron/modhosts sauron-0.7.3/modhosts
+--- sauron/modhosts	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/modhosts	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # modhosts - utility to modify (move,delete) host records
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id: modhosts,v 1.16 2005/04/26 04:01:52 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/moduser sauron-0.7.3/moduser
+--- sauron/moduser	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/moduser	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # moduser - utility to modify user/group rights
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2004.
+-# $Id: moduser,v 1.44 2008/03/31 08:43:31 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Time::Local;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/plugins/sample.conf sauron-0.7.3/plugins/sample.conf
+--- sauron/plugins/sample.conf	2015-05-29 12:35:46.000000000 +0300
++++ sauron-0.7.3/plugins/sample.conf	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ # sample.conf -- plugin definition file for plugin: sample
+ #
+-# $Id: sample.conf,v 1.1 2003/12/27 17:03:34 tjko Exp $
++# $Id$
+ 
+ # name of the plugin
+ $NAME='sample';
+diff -x .pc -x debian -x blib -x .git -uNr sauron/plugins/sample.pm sauron-0.7.3/plugins/sample.pm
+--- sauron/plugins/sample.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/plugins/sample.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # sample.pm -- sample sauron CGI interface plugin
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: sample.pm,v 1.1 2003/12/27 17:03:34 tjko Exp $
++# $Id$
+ #
+ 
+ package Sauron::Plugins::sample;
+@@ -16,7 +16,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: sample.pm,v 1.1 2003/12/27 17:03:34 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/README sauron-0.7.3/README
+--- sauron/README	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/README	2015-05-29 12:25:59.000000000 +0300
+@@ -191,5 +191,5 @@
+ 
+ 
+ --
+-Timo <tjko@iki.fi>			        $Date: 2010/02/18 09:24:28 $
++Timo <tjko@iki.fi>			        $Date$
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/README.upgrade sauron-0.7.3/README.upgrade
+--- sauron/README.upgrade	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/README.upgrade	2015-05-29 12:33:23.000000000 +0300
+@@ -10,7 +10,6 @@
+ 0.7.0			1.1
+ 0.7.1			1.2
+ 0.7.2			1.3
+-0.7.3			1.4
+ 
+ 
+ GENERAL UPGRADE PROCEDURE
+diff -x .pc -x debian -x blib -x .git -uNr sauron/remove-hosts sauron-0.7.3/remove-hosts
+--- sauron/remove-hosts	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/remove-hosts	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # remove-hosts -- removes hosts based on list of MACs read from a file
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: remove-hosts,v 1.4 2005/04/27 06:25:28 tjko Exp $
++# $Id$
+ #
+ use Getopt::Long;
+ use Sauron::DB;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/runsql sauron-0.7.3/runsql
+--- sauron/runsql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/runsql	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # runsql - utility to run SQL code from files given as parameters
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id: runsql,v 1.9 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sauron sauron-0.7.3/sauron
+--- sauron/sauron	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sauron	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # sauron - generates BIND/DHCP/printer configuration files from database
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2005.
+-# $Id: sauron,v 1.106 2010/02/18 09:19:31 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Net::Netmask;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/BackEnd.pm sauron-0.7.3/Sauron/BackEnd.pm
+--- sauron/Sauron/BackEnd.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/BackEnd.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::BackEnd.pm  -- Sauron back-end routines
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2005.
+-# $Id: BackEnd.pm,v 1.73 2008/03/31 08:43:32 tjko Exp $
++# $Id$
+ #
+ package Sauron::BackEnd;
+ require Exporter;
+@@ -11,7 +11,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: BackEnd.pm,v 1.73 2008/03/31 08:43:32 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/ACLs.pm sauron-0.7.3/Sauron/CGI/ACLs.pm
+--- sauron/Sauron/CGI/ACLs.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/ACLs.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::ACLs.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2005.
+-# $Id: ACLs.pm,v 1.2 2005/01/28 08:20:26 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::ACLs;
+ require Exporter;
+@@ -14,7 +14,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: ACLs.pm,v 1.2 2005/01/28 08:20:26 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/Groups.pm sauron-0.7.3/Sauron/CGI/Groups.pm
+--- sauron/Sauron/CGI/Groups.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/Groups.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::Groups.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: Groups.pm,v 1.1 2003/07/21 19:50:41 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::Groups;
+ require Exporter;
+@@ -14,7 +14,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Groups.pm,v 1.1 2003/07/21 19:50:41 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/Hosts.pm sauron-0.7.3/Sauron/CGI/Hosts.pm
+--- sauron/Sauron/CGI/Hosts.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/Hosts.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::Hosts.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003-2005.
+-# $Id: Hosts.pm,v 1.25 2010/02/18 09:12:42 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::Hosts;
+ require Exporter;
+@@ -16,7 +16,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Hosts.pm,v 1.25 2010/02/18 09:12:42 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/Login.pm sauron-0.7.3/Sauron/CGI/Login.pm
+--- sauron/Sauron/CGI/Login.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/Login.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::Login.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: Login.pm,v 1.6 2008/08/25 07:07:40 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::Login;
+ require Exporter;
+@@ -15,7 +15,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Login.pm,v 1.6 2008/08/25 07:07:40 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/Nets.pm sauron-0.7.3/Sauron/CGI/Nets.pm
+--- sauron/Sauron/CGI/Nets.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/Nets.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::Nets.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: Nets.pm,v 1.11 2010/02/18 09:12:42 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::Nets;
+ require Exporter;
+@@ -15,7 +15,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Nets.pm,v 1.11 2010/02/18 09:12:42 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/Servers.pm sauron-0.7.3/Sauron/CGI/Servers.pm
+--- sauron/Sauron/CGI/Servers.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/Servers.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::Servers.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003-2005.
+-# $Id: Servers.pm,v 1.11 2010/02/18 09:12:42 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::Servers;
+ require Exporter;
+@@ -13,7 +13,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Servers.pm,v 1.11 2010/02/18 09:12:42 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/Templates.pm sauron-0.7.3/Sauron/CGI/Templates.pm
+--- sauron/Sauron/CGI/Templates.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/Templates.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::Templates.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: Templates.pm,v 1.1 2003/07/21 19:50:41 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::Templates;
+ require Exporter;
+@@ -14,7 +14,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Templates.pm,v 1.1 2003/07/21 19:50:41 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/Utils.pm sauron-0.7.3/Sauron/CGI/Utils.pm
+--- sauron/Sauron/CGI/Utils.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/Utils.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::Utils.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: Utils.pm,v 1.5 2008/03/31 08:43:32 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::Utils;
+ require Exporter;
+@@ -14,7 +14,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Utils.pm,v 1.5 2008/03/31 08:43:32 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGI/Zones.pm sauron-0.7.3/Sauron/CGI/Zones.pm
+--- sauron/Sauron/CGI/Zones.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGI/Zones.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGI::Zones.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: Zones.pm,v 1.9 2010/02/18 09:12:42 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGI::Zones;
+ require Exporter;
+@@ -15,7 +15,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Zones.pm,v 1.9 2010/02/18 09:12:42 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/CGIutil.pm sauron-0.7.3/Sauron/CGIutil.pm
+--- sauron/Sauron/CGIutil.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/CGIutil.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::CGIutil.pm  --  generic CGI stuff
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003,2005.
+-# $Id: CGIutil.pm,v 1.20 2005/01/27 09:24:44 tjko Exp $
++# $Id$
+ #
+ package Sauron::CGIutil;
+ require Exporter;
+@@ -13,7 +13,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: CGIutil.pm,v 1.20 2005/01/27 09:24:44 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/DB-DBI.pm sauron-0.7.3/Sauron/DB-DBI.pm
+--- sauron/Sauron/DB-DBI.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/DB-DBI.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ # Sauron::DB.pm  -- Sauron database interface routines using DBI
+ #
+-# $Id: DB-DBI.pm,v 1.6 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ package Sauron::DB;
+ require Exporter;
+@@ -10,7 +10,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: DB-DBI.pm,v 1.6 2003/12/28 19:29:12 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/DB-Pg.pm sauron-0.7.3/Sauron/DB-Pg.pm
+--- sauron/Sauron/DB-Pg.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/DB-Pg.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ # Sauron::DB.pm  -- Sauron database interface routines using Pg.pm module
+ #
+-# $Id: DB-Pg.pm,v 1.2 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ package Sauron::DB;
+ require Exporter;
+@@ -10,7 +10,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: DB-Pg.pm,v 1.2 2003/12/28 19:29:12 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/Sauron.pm sauron-0.7.3/Sauron/Sauron.pm
+--- sauron/Sauron/Sauron.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/Sauron.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::Sauron.pm -- configuration file parsing and default settings
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003-2007.
+-# $Id: Sauron.pm,v 1.30 2008/02/28 08:52:47 tjko Exp $
++# $Id$
+ #
+ package Sauron::Sauron;
+ require Exporter;
+@@ -10,7 +10,7 @@
+ use strict;
+ use vars qw($VERSION $CONF_FILE_PATH @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Sauron.pm,v 1.30 2008/02/28 08:52:47 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ $CONF_FILE_PATH = '__CONF_FILE_PATH__';
+ 
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/UtilDhcp.pm sauron-0.7.3/Sauron/UtilDhcp.pm
+--- sauron/Sauron/UtilDhcp.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/UtilDhcp.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::UtilDhcp.pm - ISC DHCPD config file reading/parsing routines
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi> 2002.
+-# $Id: UtilDhcp.pm,v 1.5 2003/03/05 08:14:22 tjko Exp $
++# $Id$
+ #
+ package Sauron::UtilDhcp;
+ require Exporter;
+@@ -10,7 +10,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: UtilDhcp.pm,v 1.5 2003/03/05 08:14:22 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(process_dhcpdconf);
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/Util.pm sauron-0.7.3/Sauron/Util.pm
+--- sauron/Sauron/Util.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/Util.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::Util.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2003,2005.
+-# $Id: Util.pm,v 1.25 2009/02/05 09:28:30 tjko Exp $
++# $Id$
+ #
+ package Sauron::Util;
+ require Exporter;
+@@ -12,7 +12,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: Util.pm,v 1.25 2009/02/05 09:28:30 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/Sauron/UtilZone.pm sauron-0.7.3/Sauron/UtilZone.pm
+--- sauron/Sauron/UtilZone.pm	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/Sauron/UtilZone.pm	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ # Sauron::UtilZone.pm - BIND zone file reading/parsing routines
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000,2002.
+-# $Id: UtilZone.pm,v 1.15 2008/03/31 08:38:49 tjko Exp $
++# $Id$
+ #
+ package Sauron::UtilZone;
+ require Exporter;
+@@ -12,7 +12,7 @@
+ use strict;
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+-$VERSION = '$Id: UtilZone.pm,v 1.15 2008/03/31 08:38:49 tjko Exp $ ';
++$VERSION = '$Id$ ';
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff -x .pc -x debian -x blib -x .git -uNr sauron/solaris/makesvr4pkg.pl sauron-0.7.3/solaris/makesvr4pkg.pl
+--- sauron/solaris/makesvr4pkg.pl	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/solaris/makesvr4pkg.pl	2015-05-26 19:53:05.000000000 +0300
+@@ -3,7 +3,7 @@
+ # makesvr4pkg.pl -- simple SVR4 packakge building tool
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi> 2003,2004.
+-# $Id: makesvr4pkg.pl,v 1.3 2004/08/15 07:29:19 tjko Exp $
++# $Id$
+ #
+ use File::Path;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/acls.sql sauron-0.7.3/sql/acls.sql
+--- sauron/sql/acls.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/acls.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* ACLs table creation
+  *
+- * $Id: acls.sql,v 1.1 2005/01/25 04:49:05 tjko Exp $
++ * $Id$
+  */
+ 
+ /** ACLs (access control lists) definitions. ACLs can contain
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/a_entries.sql sauron-0.7.3/sql/a_entries.sql
+--- sauron/sql/a_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/a_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* a_entries table creation
+  *
+- * $Id: a_entries.sql,v 1.6 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** Addresses (A records) for hosts, linked to a host record. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/arec_entries.sql sauron-0.7.3/sql/arec_entries.sql
+--- sauron/sql/arec_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/arec_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* arec_entries table creation
+  *
+- * $Id: arec_entries.sql,v 1.4 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** pointers to A record aliased hosts, linked to a host record. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/cidr_entries.sql sauron-0.7.3/sql/cidr_entries.sql
+--- sauron/sql/cidr_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/cidr_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* cidr_entries table creation
+  *
+- * $Id: cidr_entries.sql,v 1.11 2008/02/28 08:42:07 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains CIDRs (and ACL/Key references) used in server 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/common.sql sauron-0.7.3/sql/common.sql
+--- sauron/sql/common.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/common.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* common table(s) creation
+  *
+- * $Id: common.sql,v 1.6 2004/01/15 06:36:26 tjko Exp $
++ * $Id$
+  */
+ 
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/convertdb_1.0b2_1.0 sauron-0.7.3/sql/convertdb_1.0b2_1.0
+--- sauron/sql/convertdb_1.0b2_1.0	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/convertdb_1.0b2_1.0	2015-05-26 19:53:20.000000000 +0300
+@@ -3,7 +3,7 @@
+ # convert database format (beta) to 1.0
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2002.
+-# $Id: convertdb_1.0b2_1.0,v 1.1 2002/09/01 19:06:40 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/copy_tables.sql sauron-0.7.3/sql/copy_tables.sql
+--- sauron/sql/copy_tables.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/copy_tables.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* copy_tables.sql
+  *
+- * $Id: copy_tables.sql,v 1.1 2001/04/18 08:57:54 tjko Exp $
++ * $Id$
+  */
+ 
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/dbconvert_0.9to1.0.sql sauron-0.7.3/sql/dbconvert_0.9to1.0.sql
+--- sauron/sql/dbconvert_0.9to1.0.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/dbconvert_0.9to1.0.sql	2015-05-26 19:53:25.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* SQL script to convert sauron database version 0.9 to 1.0 
+ 
+-   $Id: dbconvert_0.9to1.0.sql,v 1.4 2002/09/22 21:04:41 tjko Exp $ 
++   $Id$ 
+ 
+    Usage: psql sauron -f <script> 
+ */
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/dbconvert_1.0to1.1 sauron-0.7.3/sql/dbconvert_1.0to1.1
+--- sauron/sql/dbconvert_1.0to1.1	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/dbconvert_1.0to1.1	2015-05-29 12:25:59.000000000 +0300
+@@ -40,7 +40,7 @@
+ 
+ /* vmps table creation
+  *
+- * $Id: dbconvert_1.0to1.1,v 1.6 2005/05/13 05:54:38 tjko Exp $
++ * $Id$
+  */
+ 
+ /** VMPS domain definitions, linked to a server record. 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/DEFAULTS.sql sauron-0.7.3/sql/DEFAULTS.sql
+--- sauron/sql/DEFAULTS.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/DEFAULTS.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* adds necessary settings/defaults into settings table
+  *
+- * $Id: DEFAULTS.sql,v 1.6 2005/05/13 05:30:16 tjko Exp $
++ * $Id$
+  */
+ 
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/dhcp_entries.sql sauron-0.7.3/sql/dhcp_entries.sql
+--- sauron/sql/dhcp_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/dhcp_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* dhcp_entries table creation
+  *
+- * $Id: dhcp_entries.sql,v 1.4 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains DHCP options user in various contexts. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/drop_tables.sql sauron-0.7.3/sql/drop_tables.sql
+--- sauron/sql/drop_tables.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/drop_tables.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* drop_tables.sql
+  *
+- * $Id: drop_tables.sql,v 1.14 2001/11/18 16:01:53 tjko Exp $
++ * $Id$
+  */
+ 
+ DROP TABLE a_entries;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/ether_info.sql sauron-0.7.3/sql/ether_info.sql
+--- sauron/sql/ether_info.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/ether_info.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* ether_info table creation
+  *
+- * $Id: ether_info.sql,v 1.2 2001/03/16 20:32:26 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains Ethernet adapter manufacturer codes.  **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/group_entries.sql sauron-0.7.3/sql/group_entries.sql
+--- sauron/sql/group_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/group_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* group_entries table creation
+  *
+- * $Id: group_entries.sql,v 1.2 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** subgroup memberships, pointers to group records, 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/groups.sql sauron-0.7.3/sql/groups.sql
+--- sauron/sql/groups.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/groups.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ /* groups table creation
+  *
+  *
+- * $Id: groups.sql,v 1.9 2003/07/13 16:47:15 tjko Exp $
++ * $Id$
+  */
+ 
+ /** Group descriptions, linked to server record. Hosts can "belong" to
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/hinfo_hw.sql sauron-0.7.3/sql/hinfo_hw.sql
+--- sauron/sql/hinfo_hw.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/hinfo_hw.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ /**************************************************************************
+  * hinfo_hw.sql  -- default HINFO hardware template entries
+  *
+- * $Id: hinfo_hw.sql,v 1.3 2001/02/25 00:48:34 tjko Exp $
++ * $Id$
+  */
+ 
+ INSERT INTO hinfo_templates (hinfo,type,pri) VALUES('PC',0,1);
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/hinfo_sw.sql sauron-0.7.3/sql/hinfo_sw.sql
+--- sauron/sql/hinfo_sw.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/hinfo_sw.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,7 +1,7 @@
+ /**************************************************************************
+  * hinfo_sw.sql  -- default HINFO software template entries
+  *
+- * $Id: hinfo_sw.sql,v 1.2 2001/02/25 00:48:34 tjko Exp $
++ * $Id$
+  */
+ 
+ INSERT INTO hinfo_templates (hinfo,type,pri) VALUES('MS-WINDOWS-98',1,1);
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/hinfo_templates.sql sauron-0.7.3/sql/hinfo_templates.sql
+--- sauron/sql/hinfo_templates.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/hinfo_templates.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* hinfo_templates table creation
+  *
+- * $Id: hinfo_templates.sql,v 1.4 2001/04/18 08:57:55 tjko Exp $
++ * $Id$
+  */
+ 
+ /** HINFO templates table contains list of default values
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/history.sql sauron-0.7.3/sql/history.sql
+--- sauron/sql/history.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/history.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* history table creation
+  *
+- * $Id: history.sql,v 1.3 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** history table contains "log" data of modifications done to the
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/hosts.sql sauron-0.7.3/sql/hosts.sql
+--- sauron/sql/hosts.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/hosts.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -4,7 +4,7 @@
+  * can describe host,subdomain delegation,plain mx entry,alias (cname),
+  * printer, or glue records (for delegations). 
+  *
+- * $Id: hosts.sql,v 1.16 2003/12/29 16:17:59 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains host entries for a zone. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/keys.sql sauron-0.7.3/sql/keys.sql
+--- sauron/sql/keys.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/keys.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* keys table creation
+  *
+- * $Id: keys.sql,v 1.2 2005/01/28 08:19:27 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains TSIG/DNSSEC keys.  **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/lastlog.sql sauron-0.7.3/sql/lastlog.sql
+--- sauron/sql/lastlog.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/lastlog.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* lastlog table creation
+  *
+- * $Id: lastlog.sql,v 1.3 2003/06/24 20:35:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** lastlog table contains "lastlog" data of database users **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/leases.sql sauron-0.7.3/sql/leases.sql
+--- sauron/sql/leases.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/leases.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* leases table creation
+  *
+- * $Id: leases.sql,v 1.2 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** Stores information about DHCP server leases  **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/misc.sql sauron-0.7.3/sql/misc.sql
+--- sauron/sql/misc.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/misc.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* misc.sql
+  *
+- * $Id: misc.sql,v 1.1 2001/04/25 21:27:35 tjko Exp $
++ * $Id$
+  */
+ 
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/mx_entries.sql sauron-0.7.3/sql/mx_entries.sql
+--- sauron/sql/mx_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/mx_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* mx_entries table creation
+  *
+- * $Id: mx_entries.sql,v 1.4 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains MX record entries. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/mx_templates.sql sauron-0.7.3/sql/mx_templates.sql
+--- sauron/sql/mx_templates.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/mx_templates.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* mx_templates table creation
+  *
+- * $Id: mx_templates.sql,v 1.6 2001/11/18 19:25:15 tjko Exp $
++ * $Id$
+  */
+ 
+ /** MX entry templates, hosts may link to one entry in this table.
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/nets.sql sauron-0.7.3/sql/nets.sql
+--- sauron/sql/nets.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/nets.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* nets table creation
+  *
+- * $Id: nets.sql,v 1.14 2004/01/08 18:57:28 tjko Exp $
++ * $Id$
+  */
+ 
+ /** Net/subnet descriptions, linked to server record. 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/news.sql sauron-0.7.3/sql/news.sql
+--- sauron/sql/news.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/news.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* news table creation
+  *
+- * $Id: news.sql,v 1.1 2001/05/28 22:44:35 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains motd/news to be displayed when user logs in...  **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/ns_entries.sql sauron-0.7.3/sql/ns_entries.sql
+--- sauron/sql/ns_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/ns_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* ns_entries table creation
+  *
+- * $Id: ns_entries.sql,v 1.4 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains NS resource record definitions. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/printer_classes.sql sauron-0.7.3/sql/printer_classes.sql
+--- sauron/sql/printer_classes.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/printer_classes.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* printer_classes table creation
+  *
+- * $Id: printer_classes.sql,v 1.3 2001/04/18 08:57:56 tjko Exp $
++ * $Id$
+  */
+ 
+ /** Global table to store printer classes (printcap stuff)
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/printer_entries.sql sauron-0.7.3/sql/printer_entries.sql
+--- sauron/sql/printer_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/printer_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* printer_entries table creation
+  *
+- * $Id: printer_entries.sql,v 1.2 2001/03/16 20:32:28 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains printer definition entries. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/root_servers.sql sauron-0.7.3/sql/root_servers.sql
+--- sauron/sql/root_servers.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/root_servers.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* root_Servers table creation
+  *
+- * $Id: root_servers.sql,v 1.2 2001/03/16 20:32:28 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains root server definitions. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/servers.sql sauron-0.7.3/sql/servers.sql
+--- sauron/sql/servers.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/servers.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+  * table to store server specific data 
+  * (server can have multiple zones linked to it) 
+  *
+- * $Id: servers.sql,v 1.18 2008/02/11 08:28:40 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains servers that are managed with this system.
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/srv_entries.sql sauron-0.7.3/sql/srv_entries.sql
+--- sauron/sql/srv_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/srv_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* srv_entries table creation
+  *
+- * $Id: srv_entries.sql,v 1.2 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains MX record entries. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/txt_entries.sql sauron-0.7.3/sql/txt_entries.sql
+--- sauron/sql/txt_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/txt_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* txt_entries table creation
+  *
+- * $Id: txt_entries.sql,v 1.9 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains TXT record entries and miscellaneous text entries. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/user_groups.sql sauron-0.7.3/sql/user_groups.sql
+--- sauron/sql/user_groups.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/user_groups.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* user_groups table creation
+  *
+- * $Id: user_groups.sql,v 1.1 2001/04/18 06:00:58 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains records defining user groups.  **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/user_rights.sql sauron-0.7.3/sql/user_rights.sql
+--- sauron/sql/user_rights.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/user_rights.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* user_rights table creation
+  *
+- * $Id: user_rights.sql,v 1.12 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains record defining user rights.  **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/users.sql sauron-0.7.3/sql/users.sql
+--- sauron/sql/users.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/users.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* users table creation
+  *
+- * $Id: users.sql,v 1.12 2004/04/22 13:40:53 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains (user interface) user account information. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/utmp.sql sauron-0.7.3/sql/utmp.sql
+--- sauron/sql/utmp.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/utmp.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* utmp table creation
+  *
+- * $Id: utmp.sql,v 1.8 2003/06/24 20:35:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains "utmp" data of currently logged in www-interface
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/vlans.sql sauron-0.7.3/sql/vlans.sql
+--- sauron/sql/vlans.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/vlans.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* vlans table creation
+  *
+- * $Id: vlans.sql,v 1.3 2004/01/08 18:57:28 tjko Exp $
++ * $Id$
+  */
+ 
+ /** "VLAN" (Layer-2 networks/shared networks) descriptions, 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/vmps.sql sauron-0.7.3/sql/vmps.sql
+--- sauron/sql/vmps.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/vmps.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* vmps table creation
+  *
+- * $Id: vmps.sql,v 1.2 2004/01/08 18:57:28 tjko Exp $
++ * $Id$
+  */
+ 
+ /** VMPS domain definitions, linked to a server record. 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/wks_entries.sql sauron-0.7.3/sql/wks_entries.sql
+--- sauron/sql/wks_entries.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/wks_entries.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* wks_entries table creation
+  *
+- * $Id: wks_entries.sql,v 1.3 2005/05/13 05:31:54 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains WKS record entries. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/wks_templates.sql sauron-0.7.3/sql/wks_templates.sql
+--- sauron/sql/wks_templates.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/wks_templates.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -1,6 +1,6 @@
+ /* wks_templates table creation
+  *
+- * $Id: wks_templates.sql,v 1.6 2001/11/18 19:25:16 tjko Exp $
++ * $Id$
+  */
+ 
+ /** WKS entry templates, hosts may link to one entry
+diff -x .pc -x debian -x blib -x .git -uNr sauron/sql/zones.sql sauron-0.7.3/sql/zones.sql
+--- sauron/sql/zones.sql	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/sql/zones.sql	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+  * table to store zone specific data 
+  * (zone usually have bunch of host table records linked to it)
+  *
+- * $Id: zones.sql,v 1.12 2005/01/25 04:48:42 tjko Exp $
++ * $Id$
+  */
+ 
+ /** This table contains zone definitions of a server. **/
+diff -x .pc -x debian -x blib -x .git -uNr sauron/status sauron-0.7.3/status
+--- sauron/status	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/status	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # status -- utlity to query/modify system status
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id: status,v 1.30 2008/08/25 07:02:58 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/test/10.10.in-addr.arpa.zone sauron-0.7.3/test/10.10.in-addr.arpa.zone
+--- sauron/test/10.10.in-addr.arpa.zone	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/test/10.10.in-addr.arpa.zone	2015-05-26 19:55:18.000000000 +0300
+@@ -1,5 +1,5 @@
+ ; 10.10.in-addr.arpa zone - for sauron testing
+-; $Id: 10.10.in-addr.arpa.zone,v 1.2 2002/12/23 00:06:35 tjko Exp $
++; $Id$
+ 
+ $TTL 604800
+ $ORIGIN 10.10.in-addr.arpa.
+diff -x .pc -x debian -x blib -x .git -uNr sauron/test/127.in-addr.arpa.zone sauron-0.7.3/test/127.in-addr.arpa.zone
+--- sauron/test/127.in-addr.arpa.zone	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/test/127.in-addr.arpa.zone	2015-05-26 19:55:20.000000000 +0300
+@@ -1,5 +1,5 @@
+ ; 127.in-addr.arpa zone - for sauron testing
+-; $Id: 127.in-addr.arpa.zone,v 1.1 2002/08/29 17:00:01 tjko Exp $
++; $Id$
+ 
+ $TTL 604800
+ $ORIGIN 127.in-addr.arpa.
+diff -x .pc -x debian -x blib -x .git -uNr sauron/test/dhcpd.conf sauron-0.7.3/test/dhcpd.conf
+--- sauron/test/dhcpd.conf	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/test/dhcpd.conf	2015-05-26 19:55:23.000000000 +0300
+@@ -1,5 +1,5 @@
+ # dhcpd.conf -- for sauron testing
+-# $Id: dhcpd.conf,v 1.2 2002/12/23 00:06:35 tjko Exp $
++# $Id$
+ #
+ 
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/test/localhost.zone sauron-0.7.3/test/localhost.zone
+--- sauron/test/localhost.zone	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/test/localhost.zone	2015-05-26 19:55:25.000000000 +0300
+@@ -1,5 +1,5 @@
+ ; localhost.zone - for sauron testing
+-; $Id: localhost.zone,v 1.1 2002/08/29 17:00:01 tjko Exp $
++; $Id$
+ ;
+ $TTL 86400
+ $ORIGIN localhost.
+diff -x .pc -x debian -x blib -x .git -uNr sauron/test/middle.earth.zone sauron-0.7.3/test/middle.earth.zone
+--- sauron/test/middle.earth.zone	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/test/middle.earth.zone	2015-05-26 19:55:27.000000000 +0300
+@@ -1,5 +1,5 @@
+ ; middle.earth. zone - for sauron testing
+-; $Id: middle.earth.zone,v 1.3 2002/12/23 00:06:35 tjko Exp $
++; $Id$
+ 
+ $TTL 43200	; default TTL for this zone
+ 
+diff -x .pc -x debian -x blib -x .git -uNr sauron/test/named.conf sauron-0.7.3/test/named.conf
+--- sauron/test/named.conf	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/test/named.conf	2015-05-26 19:55:29.000000000 +0300
+@@ -1,5 +1,5 @@
+ // named.conf -- for sauron testing
+-// $Id: named.conf,v 1.2 2002/12/23 00:06:35 tjko Exp $
++// $Id$
+ 
+ options {
+ 	directory "/opt/ns/";
+diff -x .pc -x debian -x blib -x .git -uNr sauron/update-dhcp-info sauron-0.7.3/update-dhcp-info
+--- sauron/update-dhcp-info	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/update-dhcp-info	2015-05-29 12:25:59.000000000 +0300
+@@ -4,7 +4,7 @@
+ #                   field in hosts table (for given server)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2005.
+-# $Id: update-dhcp-info,v 1.15 2005/12/06 05:45:56 tjko Exp $
++# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff -x .pc -x debian -x blib -x .git -uNr sauron/update-hosts sauron-0.7.3/update-hosts
+--- sauron/update-hosts	2015-05-29 12:35:47.000000000 +0300
++++ sauron-0.7.3/update-hosts	2015-05-29 12:25:59.000000000 +0300
+@@ -3,7 +3,7 @@
+ # update-hosts -- updates hosts from data in CSV format file
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id: update-hosts,v 1.6 2003/12/28 19:29:12 tjko Exp $
++# $Id$
+ #
+ use Getopt::Long;
+ use Sauron::DB;

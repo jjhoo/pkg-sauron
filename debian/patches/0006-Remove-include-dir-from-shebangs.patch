@@ -1,0 +1,341 @@
+From 3fc2b8bb034b27894790b4c4cd19b846d00ca0b2 Mon Sep 17 00:00:00 2001
+From: Jani Hakala <jjhakala@gmail.com>
+Date: Tue, 26 May 2015 22:47:35 +0300
+Subject: [PATCH 6/8] Remove include dir from shebangs
+
+---
+ addgroup         | 2 +-
+ addhosts         | 2 +-
+ adduser          | 2 +-
+ check-pending    | 2 +-
+ createtables     | 2 +-
+ delgroup         | 2 +-
+ deluser          | 2 +-
+ expire-hosts     | 2 +-
+ export-hosts     | 2 +-
+ export-ip-list   | 2 +-
+ export-networks  | 2 +-
+ export-vmps      | 2 +-
+ generatehosts    | 2 +-
+ import           | 2 +-
+ import-dhcp      | 2 +-
+ import-ethers    | 2 +-
+ import-jyu       | 2 +-
+ import-nets      | 2 +-
+ import-roots     | 2 +-
+ import-zone      | 2 +-
+ keygen           | 2 +-
+ last             | 2 +-
+ modhosts         | 2 +-
+ moduser          | 2 +-
+ remove-hosts     | 2 +-
+ runsql           | 2 +-
+ sauron           | 2 +-
+ status           | 2 +-
+ update-dhcp-info | 2 +-
+ update-hosts     | 2 +-
+ 30 files changed, 30 insertions(+), 30 deletions(-)
+
+diff --git a/addgroup b/addgroup
+index 1ac01dd..0c5c9b1 100755
+--- a/addgroup
++++ b/addgroup
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # addgroup - utility to create users
+ #
+diff --git a/addhosts b/addhosts
+index 06c11d0..39ae8eb 100755
+--- a/addhosts
++++ b/addhosts
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # addhosts - utility to add host records
+ #
+diff --git a/adduser b/adduser
+index 8bf6d41..23195cb 100755
+--- a/adduser
++++ b/adduser
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # adduser - utility to create users
+ #
+diff --git a/check-pending b/check-pending
+index 117362c..30f8145 100755
+--- a/check-pending
++++ b/check-pending
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # check-pending -- utility (to be run from cron) to check for pending host
+ #                  changes in Sauron database
+diff --git a/createtables b/createtables
+index 659e96e..6114f10 100755
+--- a/createtables
++++ b/createtables
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # createtables -- utlity to create all the necessary
+ #                 tables for Sauron
+diff --git a/delgroup b/delgroup
+index 4dbb2cc..99badf8 100755
+--- a/delgroup
++++ b/delgroup
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # delgroup - utility to delete user groups
+ #
+diff --git a/deluser b/deluser
+index 9c6629e..176765e 100755
+--- a/deluser
++++ b/deluser
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # deluser - utility to delete users
+ #
+diff --git a/expire-hosts b/expire-hosts
+index fab384e..716696e 100755
+--- a/expire-hosts
++++ b/expire-hosts
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # expire-hosts - utility to expire hosts w/o recent dhcp activity
+ #
+diff --git a/export-hosts b/export-hosts
+index 2dc8f4f..b835251 100755
+--- a/export-hosts
++++ b/export-hosts
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # export-hosts  generates list of IPs in use for given neworks
+ #
+diff --git a/export-ip-list b/export-ip-list
+index 94061be..8f94e0d 100755
+--- a/export-ip-list
++++ b/export-ip-list
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # export-ip-list  generates list of IPs in use for given neworks
+ #
+diff --git a/export-networks b/export-networks
+index 20a4f46..9c7736d 100755
+--- a/export-networks
++++ b/export-networks
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # export-networks  generates /etc/networks file (from given server)
+ #
+diff --git a/export-vmps b/export-vmps
+index a84e501..3376fa6 100755
+--- a/export-vmps
++++ b/export-vmps
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # export-vmps  generates VMPS configuration file (from given server)
+ #
+diff --git a/generatehosts b/generatehosts
+index 653d8db..0e09579 100755
+--- a/generatehosts
++++ b/generatehosts
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # generatehosts - utility to add host records
+ #
+diff --git a/import b/import
+index dd03573..f6a80ae 100755
+--- a/import
++++ b/import
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # import - imports BIND configuration/databases
+ #
+diff --git a/import-dhcp b/import-dhcp
+index 18d52fc..599b975 100755
+--- a/import-dhcp
++++ b/import-dhcp
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # import-dhcp - imports ISC DHCPD configuration
+ #
+diff --git a/import-ethers b/import-ethers
+index 7f40979..d8080dc 100755
+--- a/import-ethers
++++ b/import-ethers
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # import-ethers  imports Ethernet card manufacturer codes&descriptions
+ #                from text file (Ethernet.txt or IEEE's oui.txt)
+diff --git a/import-jyu b/import-jyu
+index 55ee99c..b57a48b 100755
+--- a/import-jyu
++++ b/import-jyu
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # import-jyu - imports nonstandard records from .hosts files
+ #
+diff --git a/import-nets b/import-nets
+index e67ab68..2b3a8f6 100755
+--- a/import-nets
++++ b/import-nets
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # import-nets -- imports (updates) networks (and VLANs) from a CSV file
+ #
+diff --git a/import-roots b/import-roots
+index eb9be8b..4b51fdc 100755
+--- a/import-roots
++++ b/import-roots
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # import-roots  imports root servers from named.roots (named.ca) file.
+ #
+diff --git a/import-zone b/import-zone
+index d5357c3..b254ad2 100755
+--- a/import-zone
++++ b/import-zone
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # import-zone - imports DNS zone from file or directly from DNS
+ #
+diff --git a/keygen b/keygen
+index 6eb69d4..afe3ef3 100755
+--- a/keygen
++++ b/keygen
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # keygen -- utility for creating TSIG/DNSSEC keys
+ #
+diff --git a/last b/last
+index a9a1671..6724879 100755
+--- a/last
++++ b/last
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # last -- utlity to display lastlog info
+ #
+diff --git a/modhosts b/modhosts
+index de1a2f5..c32b71a 100755
+--- a/modhosts
++++ b/modhosts
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # modhosts - utility to modify (move,delete) host records
+ #
+diff --git a/moduser b/moduser
+index b401f8b..a0e194d 100755
+--- a/moduser
++++ b/moduser
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # moduser - utility to modify user/group rights
+ #
+diff --git a/remove-hosts b/remove-hosts
+index 47740b9..1dfda65 100755
+--- a/remove-hosts
++++ b/remove-hosts
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # remove-hosts -- removes hosts based on list of MACs read from a file
+ #
+diff --git a/runsql b/runsql
+index fa1137b..1c7705d 100755
+--- a/runsql
++++ b/runsql
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # runsql - utility to run SQL code from files given as parameters
+ #
+diff --git a/sauron b/sauron
+index d432b2b..789a09c 100755
+--- a/sauron
++++ b/sauron
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # sauron - generates BIND/DHCP/printer configuration files from database
+ #
+diff --git a/status b/status
+index 55ae36c..d9b104d 100755
+--- a/status
++++ b/status
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # status -- utlity to query/modify system status
+ #
+diff --git a/update-dhcp-info b/update-dhcp-info
+index 489ad95..678f599 100755
+--- a/update-dhcp-info
++++ b/update-dhcp-info
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # update-dhcp-info  reads dhcpd syslog entries and updates host dhcp_date
+ #                   field in hosts table (for given server)
+diff --git a/update-hosts b/update-hosts
+index 2622ae5..f0e5969 100755
+--- a/update-hosts
++++ b/update-hosts
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -I/usr/local/sauron
++#!/usr/bin/perl
+ #
+ # update-hosts -- updates hosts from data in CSV format file
+ #
+-- 
+2.1.4
+

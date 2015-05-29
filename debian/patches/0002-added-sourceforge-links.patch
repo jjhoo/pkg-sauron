@@ -1,0 +1,38 @@
+From 5dabeec67175a818caaf08207937360d93fda93d Mon Sep 17 00:00:00 2001
+From: Timo Kokkonen <tjko@iki.fi>
+Date: Sun, 25 Sep 2011 21:59:03 -0700
+Subject: [PATCH 2/8] added sourceforge links
+
+---
+ README | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/README b/README
+index d8f04d3..8dc7e0f 100644
+--- a/README
++++ b/README
+@@ -1,4 +1,4 @@
+-Sauron v.0.7.3 - DNS/DHCP Management System
++Sauron v.0.7.4 - DNS/DHCP Management System
+ ==============
+ 
+ This is a development branch release (current stable branch is v0.6.x).
+@@ -31,9 +31,15 @@ REQUIREMENTS
+ 	  (or add support to your favorite db yourself :)
+ 	- www-server (Apache or any other www-server with CGI support)
+ 
++SOURCE
++	http://sourceforge.net/p/sauron-dns/code/
++
+ DOWNLOAD
+ 	Sauron and related files are available from:
+ 	 WWW: http://sauron.jyu.fi/
++               or
++              http://sourceforge.net/projects/sauron-dns/files/ 
++
+ 	 FTP: ftp://ftp.jyu.fi/pub/sauron/
+ 
+ 
+-- 
+2.1.4
+

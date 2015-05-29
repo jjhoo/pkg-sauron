@@ -1,0 +1,1569 @@
+From ebcce09d3f77ea36f6b8fbf9b99e7c6dc74ebbe4 Mon Sep 17 00:00:00 2001
+From: Jani Hakala <jjhakala@gmail.com>
+Date: Tue, 26 May 2015 22:50:20 +0300
+Subject: [PATCH 5/8] Remove CVS related code comments
+
+---
+ Sauron/BackEnd.pm                  |  5 +----
+ Sauron/CGI/ACLs.pm                 |  5 +----
+ Sauron/CGI/Groups.pm               |  5 +----
+ Sauron/CGI/Hosts.pm                |  5 +----
+ Sauron/CGI/Login.pm                |  5 +----
+ Sauron/CGI/Nets.pm                 |  5 +----
+ Sauron/CGI/Servers.pm              |  5 +----
+ Sauron/CGI/Templates.pm            |  5 +----
+ Sauron/CGI/Utils.pm                |  5 +----
+ Sauron/CGI/Zones.pm                |  5 +----
+ Sauron/CGIutil.pm                  |  5 +----
+ Sauron/DB-DBI.pm                   |  6 +-----
+ Sauron/DB-Pg.pm                    |  6 +-----
+ Sauron/DB.pm                       |  1 +
+ Sauron/Sauron.pm                   | 13 +++++--------
+ Sauron/Util.pm                     |  5 +----
+ Sauron/UtilDhcp.pm                 |  5 +----
+ Sauron/UtilZone.pm                 |  5 +----
+ addgroup                           |  1 -
+ addhosts                           |  1 -
+ adduser                            |  1 -
+ cgi/browser.cgi                    |  1 -
+ cgi/sauron.cgi                     |  4 ++--
+ check-pending                      |  1 -
+ contrib/Ethernet.txt               |  6 ------
+ contrib/additional-ether-codes.txt |  6 ------
+ contrib/dhcpd-lease-view           |  3 +--
+ contrib/htmldoc-sql                |  1 -
+ contrib/kerberos-auth              |  1 -
+ createtables                       |  1 -
+ delgroup                           |  1 -
+ deluser                            |  1 -
+ expire-hosts                       |  1 -
+ export-by-group                    |  1 -
+ export-hosts                       |  1 -
+ export-ip-list                     |  1 -
+ export-networks                    |  3 ---
+ export-vmps                        |  1 -
+ generatehosts                      |  1 -
+ import                             |  1 -
+ import-dhcp                        |  1 -
+ import-ethers                      |  1 -
+ import-jyu                         |  1 -
+ import-nets                        |  1 -
+ import-roots                       |  1 -
+ import-zone                        |  1 -
+ init/drop_tables.sql               |  1 -
+ init/full-privileges.sql           |  1 -
+ init/tables.sql                    |  1 -
+ keygen                             |  1 -
+ last                               |  1 -
+ modgroup                           |  1 +
+ modhosts                           |  1 -
+ moduser                            |  1 -
+ plugins/sample.conf                |  2 --
+ plugins/sample.pm                  |  5 +----
+ remove-hosts                       |  1 -
+ runsql                             |  1 -
+ sauron                             |  1 -
+ sql/DEFAULTS.sql                   |  2 --
+ sql/a_entries.sql                  |  1 -
+ sql/acls.sql                       |  1 -
+ sql/arec_entries.sql               |  1 -
+ sql/cidr_entries.sql               |  1 -
+ sql/common.sql                     |  1 -
+ sql/copy_tables.sql                |  1 -
+ sql/dbconvert_1.0to1.1             |  1 -
+ sql/dhcp_entries.sql               |  1 -
+ sql/drop_tables.sql                |  1 -
+ sql/ether_info.sql                 |  1 -
+ sql/group_entries.sql              |  1 -
+ sql/groups.sql                     |  1 -
+ sql/hinfo_hw.sql                   |  1 -
+ sql/hinfo_sw.sql                   |  1 -
+ sql/hinfo_templates.sql            |  1 -
+ sql/history.sql                    |  1 -
+ sql/hosts.sql                      |  1 -
+ sql/keys.sql                       |  1 -
+ sql/lastlog.sql                    |  1 -
+ sql/leases.sql                     |  1 -
+ sql/misc.sql                       |  1 -
+ sql/mx_entries.sql                 |  1 -
+ sql/mx_templates.sql               |  1 -
+ sql/nets.sql                       |  1 -
+ sql/news.sql                       |  1 -
+ sql/ns_entries.sql                 |  1 -
+ sql/printer_classes.sql            |  1 -
+ sql/printer_entries.sql            |  1 -
+ sql/root_servers.sql               |  1 -
+ sql/servers.sql                    |  1 -
+ sql/srv_entries.sql                |  1 -
+ sql/txt_entries.sql                |  1 -
+ sql/user_groups.sql                |  1 -
+ sql/user_rights.sql                |  1 -
+ sql/users.sql                      |  1 -
+ sql/utmp.sql                       |  1 -
+ sql/vlans.sql                      |  1 -
+ sql/vmps.sql                       |  1 -
+ sql/wks_entries.sql                |  1 -
+ sql/wks_templates.sql              |  1 -
+ sql/zones.sql                      |  1 -
+ status                             |  1 -
+ update-dhcp-info                   |  1 -
+ update-hosts                       |  1 -
+ 104 files changed, 27 insertions(+), 178 deletions(-)
+ create mode 120000 Sauron/DB.pm
+ create mode 120000 modgroup
+
+diff --git a/Sauron/BackEnd.pm b/Sauron/BackEnd.pm
+index 6d9790e..d36224f 100644
+--- a/Sauron/BackEnd.pm
++++ b/Sauron/BackEnd.pm
+@@ -1,7 +1,6 @@
+ # Sauron::BackEnd.pm  -- Sauron back-end routines
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2005.
+-# $Id$
+ #
+ package Sauron::BackEnd;
+ require Exporter;
+@@ -9,9 +8,7 @@ use Net::Netmask;
+ use Sauron::DB;
+ use Sauron::Util;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/ACLs.pm b/Sauron/CGI/ACLs.pm
+index 63f91cf..218df05 100644
+--- a/Sauron/CGI/ACLs.pm
++++ b/Sauron/CGI/ACLs.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::ACLs.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2005.
+-# $Id$
+ #
+ package Sauron::CGI::ACLs;
+ require Exporter;
+@@ -12,9 +11,7 @@ use Sauron::BackEnd;
+ use Sauron::Sauron;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/Groups.pm b/Sauron/CGI/Groups.pm
+index ecff1ae..2ffcee7 100644
+--- a/Sauron/CGI/Groups.pm
++++ b/Sauron/CGI/Groups.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::Groups.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ package Sauron::CGI::Groups;
+ require Exporter;
+@@ -12,9 +11,7 @@ use Sauron::BackEnd;
+ use Sauron::Sauron;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/Hosts.pm b/Sauron/CGI/Hosts.pm
+index be21816..03a37a1 100644
+--- a/Sauron/CGI/Hosts.pm
++++ b/Sauron/CGI/Hosts.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::Hosts.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003-2005.
+-# $Id$
+ #
+ package Sauron::CGI::Hosts;
+ require Exporter;
+@@ -14,9 +13,7 @@ use Sauron::Util;
+ use Sauron::Sauron;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/Login.pm b/Sauron/CGI/Login.pm
+index 314ac71..37a6173 100644
+--- a/Sauron/CGI/Login.pm
++++ b/Sauron/CGI/Login.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::Login.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ package Sauron::CGI::Login;
+ require Exporter;
+@@ -13,9 +12,7 @@ use Sauron::BackEnd;
+ use Sauron::Sauron;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/Nets.pm b/Sauron/CGI/Nets.pm
+index 3beb0e1..7bf6380 100644
+--- a/Sauron/CGI/Nets.pm
++++ b/Sauron/CGI/Nets.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::Nets.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ package Sauron::CGI::Nets;
+ require Exporter;
+@@ -13,9 +12,7 @@ use Sauron::BackEnd;
+ use Sauron::Sauron;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/Servers.pm b/Sauron/CGI/Servers.pm
+index dac0c91..1ff0113 100644
+--- a/Sauron/CGI/Servers.pm
++++ b/Sauron/CGI/Servers.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::Servers.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003-2005.
+-# $Id$
+ #
+ package Sauron::CGI::Servers;
+ require Exporter;
+@@ -11,9 +10,7 @@ use Sauron::BackEnd;
+ use Sauron::Sauron;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/Templates.pm b/Sauron/CGI/Templates.pm
+index 623a45f..522a4a8 100644
+--- a/Sauron/CGI/Templates.pm
++++ b/Sauron/CGI/Templates.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::Templates.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ package Sauron::CGI::Templates;
+ require Exporter;
+@@ -12,9 +11,7 @@ use Sauron::BackEnd;
+ use Sauron::Sauron;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/Utils.pm b/Sauron/CGI/Utils.pm
+index d748cec..4e01502 100644
+--- a/Sauron/CGI/Utils.pm
++++ b/Sauron/CGI/Utils.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::Utils.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ package Sauron::CGI::Utils;
+ require Exporter;
+@@ -12,9 +11,7 @@ use Sauron::BackEnd;
+ use Sauron::Util;
+ use Sauron::Sauron;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGI/Zones.pm b/Sauron/CGI/Zones.pm
+index 56f2083..0901ca8 100644
+--- a/Sauron/CGI/Zones.pm
++++ b/Sauron/CGI/Zones.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGI::Zones.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ package Sauron::CGI::Zones;
+ require Exporter;
+@@ -13,9 +12,7 @@ use Sauron::Sauron;
+ use Sauron::Util;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/CGIutil.pm b/Sauron/CGIutil.pm
+index 9fcaf29..071c47b 100644
+--- a/Sauron/CGIutil.pm
++++ b/Sauron/CGIutil.pm
+@@ -1,7 +1,6 @@
+ # Sauron::CGIutil.pm  --  generic CGI stuff
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003,2005.
+-# $Id$
+ #
+ package Sauron::CGIutil;
+ require Exporter;
+@@ -11,9 +10,7 @@ use Sauron::DB;
+ use Sauron::Util;
+ use Sauron::BackEnd;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/DB-DBI.pm b/Sauron/DB-DBI.pm
+index 594dc90..e55b11e 100644
+--- a/Sauron/DB-DBI.pm
++++ b/Sauron/DB-DBI.pm
+@@ -1,16 +1,12 @@
+ # Sauron::DB.pm  -- Sauron database interface routines using DBI
+ #
+-# $Id$
+-#
+ package Sauron::DB;
+ require Exporter;
+ use Time::Local;
+ use DBI;
+ use Sauron::Util;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/DB-Pg.pm b/Sauron/DB-Pg.pm
+index ab5b34f..6933a0f 100644
+--- a/Sauron/DB-Pg.pm
++++ b/Sauron/DB-Pg.pm
+@@ -1,16 +1,12 @@
+ # Sauron::DB.pm  -- Sauron database interface routines using Pg.pm module
+ #
+-# $Id$
+-#
+ package Sauron::DB;
+ require Exporter;
+ use Time::Local;
+ use Pg;
+ use Sauron::Util;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/DB.pm b/Sauron/DB.pm
+new file mode 120000
+index 0000000..ddce2c4
+--- /dev/null
++++ b/Sauron/DB.pm
+@@ -0,0 +1 @@
++DB-DBI.pm
+\ No newline at end of file
+diff --git a/Sauron/Sauron.pm b/Sauron/Sauron.pm
+index 91a0236..4ebf3d9 100644
+--- a/Sauron/Sauron.pm
++++ b/Sauron/Sauron.pm
+@@ -1,7 +1,6 @@
+ # Sauron::Sauron.pm -- configuration file parsing and default settings
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003-2007.
+-# $Id$
+ #
+ package Sauron::Sauron;
+ require Exporter;
+@@ -10,9 +9,10 @@ use MIME::Base64 qw(decode_base64);
+ use strict;
+ use vars qw($VERSION $CONF_FILE_PATH @ISA @EXPORT);
+ 
+-$VERSION = '$Id$ ';
+-$CONF_FILE_PATH = '__CONF_FILE_PATH__';
+-
++BEGIN {
++    $VERSION = '0.7.4';
++    $CONF_FILE_PATH = '/etc/sauron';
++}
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+@@ -24,13 +24,10 @@ $CONF_FILE_PATH = '__CONF_FILE_PATH__';
+ 	     print_browser_config
+ 	    );
+ 
+-
+-
+ sub sauron_version() {
+-  return "0.7.3"; # current Sauron version
++  return $VERSION;
+ }
+ 
+-
+ sub set_defaults() {
+   undef $main::CONFIG_FILE;
+ 
+diff --git a/Sauron/Util.pm b/Sauron/Util.pm
+index fe1824d..004a3e0 100644
+--- a/Sauron/Util.pm
++++ b/Sauron/Util.pm
+@@ -1,7 +1,6 @@
+ # Sauron::Util.pm
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2003,2005.
+-# $Id$
+ #
+ package Sauron::Util;
+ require Exporter;
+@@ -10,9 +9,7 @@ use Digest::MD5;
+ use Net::Netmask;
+ use POSIX qw(strftime);
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/Sauron/UtilDhcp.pm b/Sauron/UtilDhcp.pm
+index 8bdf8d1..6aa569b 100644
+--- a/Sauron/UtilDhcp.pm
++++ b/Sauron/UtilDhcp.pm
+@@ -1,16 +1,13 @@
+ # Sauron::UtilDhcp.pm - ISC DHCPD config file reading/parsing routines
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi> 2002.
+-# $Id$
+ #
+ package Sauron::UtilDhcp;
+ require Exporter;
+ use IO::File;
+ use Sauron::Util;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(process_dhcpdconf);
+diff --git a/Sauron/UtilZone.pm b/Sauron/UtilZone.pm
+index f5bf7a8..5fdfe42 100644
+--- a/Sauron/UtilZone.pm
++++ b/Sauron/UtilZone.pm
+@@ -1,7 +1,6 @@
+ # Sauron::UtilZone.pm - BIND zone file reading/parsing routines
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000,2002.
+-# $Id$
+ #
+ package Sauron::UtilZone;
+ require Exporter;
+@@ -10,9 +9,7 @@ use Net::DNS;
+ use Net::IP qw(:PROC);
+ use Sauron::Util;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/addgroup b/addgroup
+index 3cda83d..1ac01dd 100755
+--- a/addgroup
++++ b/addgroup
+@@ -3,7 +3,6 @@
+ # addgroup - utility to create users
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000,2002.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/addhosts b/addhosts
+index eadd455..06c11d0 100755
+--- a/addhosts
++++ b/addhosts
+@@ -3,7 +3,6 @@
+ # addhosts - utility to add host records
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001,2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/adduser b/adduser
+index 6ac9708..8bf6d41 100755
+--- a/adduser
++++ b/adduser
+@@ -3,7 +3,6 @@
+ # adduser - utility to create users
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2003.
+-# $Id$
+ #
+ require 5;
+ use Time::Local;
+diff --git a/cgi/browser.cgi b/cgi/browser.cgi
+index 30a525a..a1834cb 100755
+--- a/cgi/browser.cgi
++++ b/cgi/browser.cgi
+@@ -1,7 +1,6 @@
+ #!/usr/bin/perl -I/usr/local/sauron
+ #
+ # browser.cgi
+-# $Id$
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>, 2001-2005.
+ # All Rights Reserved.
+diff --git a/cgi/sauron.cgi b/cgi/sauron.cgi
+index 6cefa1a..86e8031 100755
+--- a/cgi/sauron.cgi
++++ b/cgi/sauron.cgi
+@@ -1,7 +1,7 @@
+ #!/usr/bin/perl -I/usr/local/sauron
+ #
+ # sauron.cgi
+-# $Id$
++#
+ # [едц~]
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>, 2000-2005.
+ # All Rights Reserved.
+@@ -25,7 +25,7 @@ $0 = $PG_NAME;
+ 
+ load_config();
+ 
+-$SAURON_CGI_VER = ' $Revision$ $Date$ ';
++$SAURON_CGI_VER = ' $Revision: 1.204 $ $Date: 2005/01/27 09:24:44 $ ';
+ $debug_mode = $SAURON_DEBUG_MODE;
+ #$|=1;
+ 
+diff --git a/check-pending b/check-pending
+index 883c8ff..117362c 100755
+--- a/check-pending
++++ b/check-pending
+@@ -3,7 +3,6 @@
+ # check-pending -- utility (to be run from cron) to check for pending host
+ #                  changes in Sauron database
+ #
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/contrib/Ethernet.txt b/contrib/Ethernet.txt
+index 916e9d2..5115cb4 100644
+--- a/contrib/Ethernet.txt
++++ b/contrib/Ethernet.txt
+@@ -1,11 +1,5 @@
+ List of codes used on 802.3 and Ethernet networks.
+ 
+-$Revision$
+-$Date$
+-$Author$
+-$Id$
+-
+-
+ This file contains collected information on the various codes used on
+ IEEE 802.3 and Ethernet.  There are three "pages" of data: type codes,
+ vendor codes, and the uses of multicast (including broadcast) addresses.
+diff --git a/contrib/additional-ether-codes.txt b/contrib/additional-ether-codes.txt
+index 50efac6..50597e9 100644
+--- a/contrib/additional-ether-codes.txt
++++ b/contrib/additional-ether-codes.txt
+@@ -3,12 +3,6 @@ NOTE: IEEE has very extensive code list available at:
+       http://standards.ieee.org/regauth/oui/
+ 
+ 
+-$Revision$
+-$Date$
+-$Author$
+-$Id$
+-
+-
+ 0000E1  Hitachi Wavelan
+ 000102  3Com (PCI cards)
+ 0001E6  Hewlett-Packard
+diff --git a/contrib/dhcpd-lease-view b/contrib/dhcpd-lease-view
+index a5ff56e..c102d2f 100755
+--- a/contrib/dhcpd-lease-view
++++ b/contrib/dhcpd-lease-view
+@@ -1,6 +1,5 @@
+ #!/usr/bin/perl -w
+ #
+-# $Id$
+ #
+ # A dhcpd.leases file viewing utility -- mesrik@cc.jyu.fi
+ #
+@@ -20,7 +19,7 @@ sub normalise($);
+ $debug = 0;
+ 
+ $0 =~ s/.*\///o; # weed the path
+-$version = '$Id$';
++$version = '$Id: dhcpd-lease-view,v 1.2 2005/02/15 09:03:07 tjko Exp $';
+ 
+ $now = strftime "%Y/%m/%d %H:%M:%S", gmtime;
+ %counter = ();
+diff --git a/contrib/htmldoc-sql b/contrib/htmldoc-sql
+index e39950c..133bdcc 100755
+--- a/contrib/htmldoc-sql
++++ b/contrib/htmldoc-sql
+@@ -4,7 +4,6 @@
+ #                definitions. (bugs: expects cleanly formatted SQL as input)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/contrib/kerberos-auth b/contrib/kerberos-auth
+index 4203f72..86a5af2 100755
+--- a/contrib/kerberos-auth
++++ b/contrib/kerberos-auth
+@@ -11,7 +11,6 @@
+ #   -1 = authentication failed
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ 
+ # uncomment to explicitly specify kerberos realm to kinit
+diff --git a/createtables b/createtables
+index 619baea..659e96e 100755
+--- a/createtables
++++ b/createtables
+@@ -4,7 +4,6 @@
+ #                 tables for Sauron
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2002-2005.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/delgroup b/delgroup
+index 59e821e..4dbb2cc 100755
+--- a/delgroup
++++ b/delgroup
+@@ -3,7 +3,6 @@
+ # delgroup - utility to delete user groups
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/deluser b/deluser
+index c2793bb..9c6629e 100755
+--- a/deluser
++++ b/deluser
+@@ -3,7 +3,6 @@
+ # deluser - utility to delete users
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/expire-hosts b/expire-hosts
+index 5d2beff..fab384e 100755
+--- a/expire-hosts
++++ b/expire-hosts
+@@ -3,7 +3,6 @@
+ # expire-hosts - utility to expire hosts w/o recent dhcp activity
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2002,2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/export-by-group b/export-by-group
+index f13bf65..bcadeeb 100755
+--- a/export-by-group
++++ b/export-by-group
+@@ -4,7 +4,6 @@
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2004.
+ # Modifications Riku Meskanen <mesrik@iki.fi> 2005.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/export-hosts b/export-hosts
+index c95f02a..2dc8f4f 100755
+--- a/export-hosts
++++ b/export-hosts
+@@ -3,7 +3,6 @@
+ # export-hosts  generates list of IPs in use for given neworks
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2004.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/export-ip-list b/export-ip-list
+index 6ddb4be..94061be 100755
+--- a/export-ip-list
++++ b/export-ip-list
+@@ -3,7 +3,6 @@
+ # export-ip-list  generates list of IPs in use for given neworks
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2004.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/export-networks b/export-networks
+index 7ef1d2a..20a4f46 100755
+--- a/export-networks
++++ b/export-networks
+@@ -3,9 +3,6 @@
+ # export-networks  generates /etc/networks file (from given server)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001,2003.
+-# $Id$
+-#
+-# Also covers csv,cidr and selecting output level and dhcponly 
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/export-vmps b/export-vmps
+index cbb411e..a84e501 100755
+--- a/export-vmps
++++ b/export-vmps
+@@ -3,7 +3,6 @@
+ # export-vmps  generates VMPS configuration file (from given server)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/generatehosts b/generatehosts
+index 708af96..653d8db 100755
+--- a/generatehosts
++++ b/generatehosts
+@@ -3,7 +3,6 @@
+ # generatehosts - utility to add host records
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2004.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/import b/import
+index 6759ae5..dd03573 100755
+--- a/import
++++ b/import
+@@ -3,7 +3,6 @@
+ # import - imports BIND configuration/databases
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2003.
+-# $Id$
+ #
+ require 5;
+ use Net::Netmask;
+diff --git a/import-dhcp b/import-dhcp
+index eea8605..18d52fc 100755
+--- a/import-dhcp
++++ b/import-dhcp
+@@ -3,7 +3,6 @@
+ # import-dhcp - imports ISC DHCPD configuration
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2002,2003.
+-# $Id$
+ #
+ require 5;
+ use Net::Netmask;
+diff --git a/import-ethers b/import-ethers
+index a37c7fd..7f40979 100755
+--- a/import-ethers
++++ b/import-ethers
+@@ -4,7 +4,6 @@
+ #                from text file (Ethernet.txt or IEEE's oui.txt)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2004.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/import-jyu b/import-jyu
+index 557f1ae..55ee99c 100755
+--- a/import-jyu
++++ b/import-jyu
+@@ -3,7 +3,6 @@
+ # import-jyu - imports nonstandard records from .hosts files
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000.
+-# $Id$
+ #
+ # fileformat (similar to BIND Master File format):
+ # {<domain>|@|<blank>} [<ignored (ttl)>] [<ignored (class)] <type> <rdata>
+diff --git a/import-nets b/import-nets
+index ef60d6d..e67ab68 100755
+--- a/import-nets
++++ b/import-nets
+@@ -3,7 +3,6 @@
+ # import-nets -- imports (updates) networks (and VLANs) from a CSV file
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ use Getopt::Long;
+ use Sauron::DB;
+diff --git a/import-roots b/import-roots
+index 116c098..eb9be8b 100755
+--- a/import-roots
++++ b/import-roots
+@@ -3,7 +3,6 @@
+ # import-roots  imports root servers from named.roots (named.ca) file.
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/import-zone b/import-zone
+index e73ef06..d5357c3 100755
+--- a/import-zone
++++ b/import-zone
+@@ -3,7 +3,6 @@
+ # import-zone - imports DNS zone from file or directly from DNS
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ require 5;
+ use Net::Netmask;
+diff --git a/init/drop_tables.sql b/init/drop_tables.sql
+index bc76b95..a06b717 100644
+--- a/init/drop_tables.sql
++++ b/init/drop_tables.sql
+@@ -1,6 +1,5 @@
+ /* drop_tables.sql
+  *
+- * $Id$
+  */
+ 
+ DROP TABLE rr_a;
+diff --git a/init/full-privileges.sql b/init/full-privileges.sql
+index bb12f51..5b8a0df 100644
+--- a/init/full-privileges.sql
++++ b/init/full-privileges.sql
+@@ -1,6 +1,5 @@
+ /* full-privileges.sql  - code to grant user full privileges to the database
+  *
+- * $Id$
+  */
+ 
+ GRANT ALL ON groups TO :user:;
+diff --git a/init/tables.sql b/init/tables.sql
+index f174984..a13fe8d 100644
+--- a/init/tables.sql
++++ b/init/tables.sql
+@@ -1,6 +1,5 @@
+ /* Sauron table templates
+  *
+- * $Id$
+  */
+ 
+ 
+diff --git a/keygen b/keygen
+index c9edbce..6eb69d4 100755
+--- a/keygen
++++ b/keygen
+@@ -3,7 +3,6 @@
+ # keygen -- utility for creating TSIG/DNSSEC keys
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2005.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/last b/last
+index 2fc298d..a9a1671 100755
+--- a/last
++++ b/last
+@@ -3,7 +3,6 @@
+ # last -- utlity to display lastlog info
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/modgroup b/modgroup
+new file mode 120000
+index 0000000..336dac3
+--- /dev/null
++++ b/modgroup
+@@ -0,0 +1 @@
++moduser
+\ No newline at end of file
+diff --git a/modhosts b/modhosts
+index 8544617..de1a2f5 100755
+--- a/modhosts
++++ b/modhosts
+@@ -3,7 +3,6 @@
+ # modhosts - utility to modify (move,delete) host records
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/moduser b/moduser
+index c370a72..b401f8b 100755
+--- a/moduser
++++ b/moduser
+@@ -3,7 +3,6 @@
+ # moduser - utility to modify user/group rights
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2004.
+-# $Id$
+ #
+ require 5;
+ use Time::Local;
+diff --git a/plugins/sample.conf b/plugins/sample.conf
+index edec93d..4242b2e 100644
+--- a/plugins/sample.conf
++++ b/plugins/sample.conf
+@@ -1,7 +1,5 @@
+ # sample.conf -- plugin definition file for plugin: sample
+ #
+-# $Id$
+-
+ # name of the plugin
+ $NAME='sample';
+ 
+diff --git a/plugins/sample.pm b/plugins/sample.pm
+index 36045ce..0a7665a 100644
+--- a/plugins/sample.pm
++++ b/plugins/sample.pm
+@@ -1,7 +1,6 @@
+ # sample.pm -- sample sauron CGI interface plugin
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ 
+ package Sauron::Plugins::sample;
+@@ -14,9 +13,7 @@ use Sauron::BackEnd;
+ use Sauron::Sauron;
+ use Sauron::CGI::Utils;
+ use strict;
+-use vars qw($VERSION @ISA @EXPORT);
+-
+-$VERSION = '$Id$ ';
++use vars qw(@ISA @EXPORT);
+ 
+ @ISA = qw(Exporter); # Inherit from Exporter
+ @EXPORT = qw(
+diff --git a/remove-hosts b/remove-hosts
+index 3716ea4..47740b9 100755
+--- a/remove-hosts
++++ b/remove-hosts
+@@ -3,7 +3,6 @@
+ # remove-hosts -- removes hosts based on list of MACs read from a file
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ use Getopt::Long;
+ use Sauron::DB;
+diff --git a/runsql b/runsql
+index 6fb8ce4..fa1137b 100755
+--- a/runsql
++++ b/runsql
+@@ -3,7 +3,6 @@
+ # runsql - utility to run SQL code from files given as parameters
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/sauron b/sauron
+index d4a6966..d432b2b 100755
+--- a/sauron
++++ b/sauron
+@@ -3,7 +3,6 @@
+ # sauron - generates BIND/DHCP/printer configuration files from database
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2000-2005.
+-# $Id$
+ #
+ require 5;
+ use Net::Netmask;
+diff --git a/sql/DEFAULTS.sql b/sql/DEFAULTS.sql
+index 902152e..6dab689 100644
+--- a/sql/DEFAULTS.sql
++++ b/sql/DEFAULTS.sql
+@@ -1,6 +1,5 @@
+ /* adds necessary settings/defaults into settings table
+  *
+- * $Id$
+  */
+ 
+ 
+@@ -8,7 +7,6 @@
+ 
+ INSERT INTO settings (setting,value) VALUES('dbversion','1.4');
+ 
+-
+ /* add BIND's built-in ACLs */
+ INSERT INTO acls (server,name) VALUES(-1,'any');
+ INSERT INTO acls (server,name) VALUES(-1,'none');
+diff --git a/sql/a_entries.sql b/sql/a_entries.sql
+index 64a91c1..68623df 100644
+--- a/sql/a_entries.sql
++++ b/sql/a_entries.sql
+@@ -1,6 +1,5 @@
+ /* a_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** Addresses (A records) for hosts, linked to a host record. **/
+diff --git a/sql/acls.sql b/sql/acls.sql
+index 08e9978..1908b67 100644
+--- a/sql/acls.sql
++++ b/sql/acls.sql
+@@ -1,6 +1,5 @@
+ /* ACLs table creation
+  *
+- * $Id$
+  */
+ 
+ /** ACLs (access control lists) definitions. ACLs can contain
+diff --git a/sql/arec_entries.sql b/sql/arec_entries.sql
+index 59d2ef9..846493d 100644
+--- a/sql/arec_entries.sql
++++ b/sql/arec_entries.sql
+@@ -1,6 +1,5 @@
+ /* arec_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** pointers to A record aliased hosts, linked to a host record. **/
+diff --git a/sql/cidr_entries.sql b/sql/cidr_entries.sql
+index 0f51f9c..8b25d3b 100644
+--- a/sql/cidr_entries.sql
++++ b/sql/cidr_entries.sql
+@@ -1,6 +1,5 @@
+ /* cidr_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains CIDRs (and ACL/Key references) used in server 
+diff --git a/sql/common.sql b/sql/common.sql
+index 38e7008..ca08bc6 100644
+--- a/sql/common.sql
++++ b/sql/common.sql
+@@ -1,6 +1,5 @@
+ /* common table(s) creation
+  *
+- * $Id$
+  */
+ 
+ 
+diff --git a/sql/copy_tables.sql b/sql/copy_tables.sql
+index 7a76f32..0bad983 100644
+--- a/sql/copy_tables.sql
++++ b/sql/copy_tables.sql
+@@ -1,6 +1,5 @@
+ /* copy_tables.sql
+  *
+- * $Id$
+  */
+ 
+ 
+diff --git a/sql/dbconvert_1.0to1.1 b/sql/dbconvert_1.0to1.1
+index 874653f..93d1185 100644
+--- a/sql/dbconvert_1.0to1.1
++++ b/sql/dbconvert_1.0to1.1
+@@ -40,7 +40,6 @@ UPDATE zones SET rdate=0;
+ 
+ /* vmps table creation
+  *
+- * $Id$
+  */
+ 
+ /** VMPS domain definitions, linked to a server record. 
+diff --git a/sql/dhcp_entries.sql b/sql/dhcp_entries.sql
+index 4d1d847..6ab9599 100644
+--- a/sql/dhcp_entries.sql
++++ b/sql/dhcp_entries.sql
+@@ -1,6 +1,5 @@
+ /* dhcp_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains DHCP options user in various contexts. **/
+diff --git a/sql/drop_tables.sql b/sql/drop_tables.sql
+index b718027..8a8e9db 100644
+--- a/sql/drop_tables.sql
++++ b/sql/drop_tables.sql
+@@ -1,6 +1,5 @@
+ /* drop_tables.sql
+  *
+- * $Id$
+  */
+ 
+ DROP TABLE a_entries;
+diff --git a/sql/ether_info.sql b/sql/ether_info.sql
+index b638d7a..f32f683 100644
+--- a/sql/ether_info.sql
++++ b/sql/ether_info.sql
+@@ -1,6 +1,5 @@
+ /* ether_info table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains Ethernet adapter manufacturer codes.  **/
+diff --git a/sql/group_entries.sql b/sql/group_entries.sql
+index 7b85fd1..c7d2097 100644
+--- a/sql/group_entries.sql
++++ b/sql/group_entries.sql
+@@ -1,6 +1,5 @@
+ /* group_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** subgroup memberships, pointers to group records, 
+diff --git a/sql/groups.sql b/sql/groups.sql
+index 0e5ad9f..6690fb7 100644
+--- a/sql/groups.sql
++++ b/sql/groups.sql
+@@ -1,7 +1,6 @@
+ /* groups table creation
+  *
+  *
+- * $Id$
+  */
+ 
+ /** Group descriptions, linked to server record. Hosts can "belong" to
+diff --git a/sql/hinfo_hw.sql b/sql/hinfo_hw.sql
+index 6ed3b06..5aaab76 100644
+--- a/sql/hinfo_hw.sql
++++ b/sql/hinfo_hw.sql
+@@ -1,7 +1,6 @@
+ /**************************************************************************
+  * hinfo_hw.sql  -- default HINFO hardware template entries
+  *
+- * $Id$
+  */
+ 
+ INSERT INTO hinfo_templates (hinfo,type,pri) VALUES('PC',0,1);
+diff --git a/sql/hinfo_sw.sql b/sql/hinfo_sw.sql
+index 619d724..7f20604 100644
+--- a/sql/hinfo_sw.sql
++++ b/sql/hinfo_sw.sql
+@@ -1,7 +1,6 @@
+ /**************************************************************************
+  * hinfo_sw.sql  -- default HINFO software template entries
+  *
+- * $Id$
+  */
+ 
+ INSERT INTO hinfo_templates (hinfo,type,pri) VALUES('MS-WINDOWS-98',1,1);
+diff --git a/sql/hinfo_templates.sql b/sql/hinfo_templates.sql
+index f2fbcc2..9edda5b 100644
+--- a/sql/hinfo_templates.sql
++++ b/sql/hinfo_templates.sql
+@@ -1,6 +1,5 @@
+ /* hinfo_templates table creation
+  *
+- * $Id$
+  */
+ 
+ /** HINFO templates table contains list of default values
+diff --git a/sql/history.sql b/sql/history.sql
+index 7d8756e..270e428 100644
+--- a/sql/history.sql
++++ b/sql/history.sql
+@@ -1,6 +1,5 @@
+ /* history table creation
+  *
+- * $Id$
+  */
+ 
+ /** history table contains "log" data of modifications done to the
+diff --git a/sql/hosts.sql b/sql/hosts.sql
+index f9fc475..80bb93d 100644
+--- a/sql/hosts.sql
++++ b/sql/hosts.sql
+@@ -4,7 +4,6 @@
+  * can describe host,subdomain delegation,plain mx entry,alias (cname),
+  * printer, or glue records (for delegations). 
+  *
+- * $Id$
+  */
+ 
+ /** This table contains host entries for a zone. **/
+diff --git a/sql/keys.sql b/sql/keys.sql
+index d583989..79b47e8 100644
+--- a/sql/keys.sql
++++ b/sql/keys.sql
+@@ -1,6 +1,5 @@
+ /* keys table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains TSIG/DNSSEC keys.  **/
+diff --git a/sql/lastlog.sql b/sql/lastlog.sql
+index f926ab3..ae79fd1 100644
+--- a/sql/lastlog.sql
++++ b/sql/lastlog.sql
+@@ -1,6 +1,5 @@
+ /* lastlog table creation
+  *
+- * $Id$
+  */
+ 
+ /** lastlog table contains "lastlog" data of database users **/
+diff --git a/sql/leases.sql b/sql/leases.sql
+index cee215c..fb060ee 100644
+--- a/sql/leases.sql
++++ b/sql/leases.sql
+@@ -1,6 +1,5 @@
+ /* leases table creation
+  *
+- * $Id$
+  */
+ 
+ /** Stores information about DHCP server leases  **/
+diff --git a/sql/misc.sql b/sql/misc.sql
+index 81e2e0c..a5e7774 100644
+--- a/sql/misc.sql
++++ b/sql/misc.sql
+@@ -1,6 +1,5 @@
+ /* misc.sql
+  *
+- * $Id$
+  */
+ 
+ 
+diff --git a/sql/mx_entries.sql b/sql/mx_entries.sql
+index 59c92eb..781b836 100644
+--- a/sql/mx_entries.sql
++++ b/sql/mx_entries.sql
+@@ -1,6 +1,5 @@
+ /* mx_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains MX record entries. **/
+diff --git a/sql/mx_templates.sql b/sql/mx_templates.sql
+index a5f36cf..c1c7de2 100644
+--- a/sql/mx_templates.sql
++++ b/sql/mx_templates.sql
+@@ -1,6 +1,5 @@
+ /* mx_templates table creation
+  *
+- * $Id$
+  */
+ 
+ /** MX entry templates, hosts may link to one entry in this table.
+diff --git a/sql/nets.sql b/sql/nets.sql
+index fa74302..ddc0c0a 100644
+--- a/sql/nets.sql
++++ b/sql/nets.sql
+@@ -1,6 +1,5 @@
+ /* nets table creation
+  *
+- * $Id$
+  */
+ 
+ /** Net/subnet descriptions, linked to server record. 
+diff --git a/sql/news.sql b/sql/news.sql
+index 983b9e3..28359a8 100644
+--- a/sql/news.sql
++++ b/sql/news.sql
+@@ -1,6 +1,5 @@
+ /* news table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains motd/news to be displayed when user logs in...  **/
+diff --git a/sql/ns_entries.sql b/sql/ns_entries.sql
+index 0176b5c..4c66dea 100644
+--- a/sql/ns_entries.sql
++++ b/sql/ns_entries.sql
+@@ -1,6 +1,5 @@
+ /* ns_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains NS resource record definitions. **/
+diff --git a/sql/printer_classes.sql b/sql/printer_classes.sql
+index 6203683..cd78505 100644
+--- a/sql/printer_classes.sql
++++ b/sql/printer_classes.sql
+@@ -1,6 +1,5 @@
+ /* printer_classes table creation
+  *
+- * $Id$
+  */
+ 
+ /** Global table to store printer classes (printcap stuff)
+diff --git a/sql/printer_entries.sql b/sql/printer_entries.sql
+index 7b413e9..29a4d03 100644
+--- a/sql/printer_entries.sql
++++ b/sql/printer_entries.sql
+@@ -1,6 +1,5 @@
+ /* printer_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains printer definition entries. **/
+diff --git a/sql/root_servers.sql b/sql/root_servers.sql
+index 3d3179e..60b4bf9 100644
+--- a/sql/root_servers.sql
++++ b/sql/root_servers.sql
+@@ -1,6 +1,5 @@
+ /* root_Servers table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains root server definitions. **/
+diff --git a/sql/servers.sql b/sql/servers.sql
+index fb8f078..451d833 100644
+--- a/sql/servers.sql
++++ b/sql/servers.sql
+@@ -3,7 +3,6 @@
+  * table to store server specific data 
+  * (server can have multiple zones linked to it) 
+  *
+- * $Id$
+  */
+ 
+ /** This table contains servers that are managed with this system.
+diff --git a/sql/srv_entries.sql b/sql/srv_entries.sql
+index fb5b7cc..680e31b 100644
+--- a/sql/srv_entries.sql
++++ b/sql/srv_entries.sql
+@@ -1,6 +1,5 @@
+ /* srv_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains MX record entries. **/
+diff --git a/sql/txt_entries.sql b/sql/txt_entries.sql
+index 6417fac..32ee31a 100644
+--- a/sql/txt_entries.sql
++++ b/sql/txt_entries.sql
+@@ -1,6 +1,5 @@
+ /* txt_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains TXT record entries and miscellaneous text entries. **/
+diff --git a/sql/user_groups.sql b/sql/user_groups.sql
+index 5daf363..de08d77 100644
+--- a/sql/user_groups.sql
++++ b/sql/user_groups.sql
+@@ -1,6 +1,5 @@
+ /* user_groups table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains records defining user groups.  **/
+diff --git a/sql/user_rights.sql b/sql/user_rights.sql
+index 1971222..ba0407a 100644
+--- a/sql/user_rights.sql
++++ b/sql/user_rights.sql
+@@ -1,6 +1,5 @@
+ /* user_rights table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains record defining user rights.  **/
+diff --git a/sql/users.sql b/sql/users.sql
+index 6891815..4db39ae 100644
+--- a/sql/users.sql
++++ b/sql/users.sql
+@@ -1,6 +1,5 @@
+ /* users table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains (user interface) user account information. **/
+diff --git a/sql/utmp.sql b/sql/utmp.sql
+index 8fffcb5..6fb2463 100644
+--- a/sql/utmp.sql
++++ b/sql/utmp.sql
+@@ -1,6 +1,5 @@
+ /* utmp table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains "utmp" data of currently logged in www-interface
+diff --git a/sql/vlans.sql b/sql/vlans.sql
+index f3f600b..925864a 100644
+--- a/sql/vlans.sql
++++ b/sql/vlans.sql
+@@ -1,6 +1,5 @@
+ /* vlans table creation
+  *
+- * $Id$
+  */
+ 
+ /** "VLAN" (Layer-2 networks/shared networks) descriptions, 
+diff --git a/sql/vmps.sql b/sql/vmps.sql
+index 6fc73f7..ea0e2cc 100644
+--- a/sql/vmps.sql
++++ b/sql/vmps.sql
+@@ -1,6 +1,5 @@
+ /* vmps table creation
+  *
+- * $Id$
+  */
+ 
+ /** VMPS domain definitions, linked to a server record. 
+diff --git a/sql/wks_entries.sql b/sql/wks_entries.sql
+index 96e8c5c..98a1b28 100644
+--- a/sql/wks_entries.sql
++++ b/sql/wks_entries.sql
+@@ -1,6 +1,5 @@
+ /* wks_entries table creation
+  *
+- * $Id$
+  */
+ 
+ /** This table contains WKS record entries. **/
+diff --git a/sql/wks_templates.sql b/sql/wks_templates.sql
+index 665a739..3253b04 100644
+--- a/sql/wks_templates.sql
++++ b/sql/wks_templates.sql
+@@ -1,6 +1,5 @@
+ /* wks_templates table creation
+  *
+- * $Id$
+  */
+ 
+ /** WKS entry templates, hosts may link to one entry
+diff --git a/sql/zones.sql b/sql/zones.sql
+index 6bd0ab8..78b4f11 100644
+--- a/sql/zones.sql
++++ b/sql/zones.sql
+@@ -3,7 +3,6 @@
+  * table to store zone specific data 
+  * (zone usually have bunch of host table records linked to it)
+  *
+- * $Id$
+  */
+ 
+ /** This table contains zone definitions of a server. **/
+diff --git a/status b/status
+index 439e2b6..55ae36c 100755
+--- a/status
++++ b/status
+@@ -3,7 +3,6 @@
+ # status -- utlity to query/modify system status
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/update-dhcp-info b/update-dhcp-info
+index c1373cb..489ad95 100755
+--- a/update-dhcp-info
++++ b/update-dhcp-info
+@@ -4,7 +4,6 @@
+ #                   field in hosts table (for given server)
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2005.
+-# $Id$
+ #
+ require 5;
+ use Getopt::Long;
+diff --git a/update-hosts b/update-hosts
+index ef6f3b2..2622ae5 100755
+--- a/update-hosts
++++ b/update-hosts
+@@ -3,7 +3,6 @@
+ # update-hosts -- updates hosts from data in CSV format file
+ #
+ # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2003.
+-# $Id$
+ #
+ use Getopt::Long;
+ use Sauron::DB;
+-- 
+2.1.4
+

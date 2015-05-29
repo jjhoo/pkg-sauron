@@ -1,0 +1,11 @@
+svn-to-git.patch
+0001-fix-to-database-version.patch
+0002-added-sourceforge-links.patch
+0003-testing-git.patch
+0004-enhancement-to-export-networks.patch
+0005-Remove-CVS-related-code-comments.patch
+0006-Remove-include-dir-from-shebangs.patch
+0007-Remove-autoconf-files-and-implement-MakeMaker-based-.patch
+# 0008-Add-debian-packaging.patch
+001paths
+002paths

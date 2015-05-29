@@ -1,0 +1,25 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://sourceforge.net/p/sauron-dns
+Upstream-Contact: Timo Kokkonen <tjko@iki.fi>
+Upstream-Name: Sauron
+
+Files: *
+Copyright: 2000-2010 Timo Kokkonen <tjko@iki.fi>
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 dated June, 1991, or (at your
+ option) any later version.
+ .
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+Files: debian/*
+Copyright: 2015, Jani Hakala <jjhakala@gmail.com>
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 dated June, 1991.
+ .
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'.

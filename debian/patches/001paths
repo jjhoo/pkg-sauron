@@ -1,0 +1,37 @@
+--- sauron-0.7.3.orig/config-browser.in
++++ sauron-0.7.3/config-browser.in
+@@ -8,7 +8,7 @@
+ # general configuration options
+ 
+ # base directory for Sauron install
+-$PROG_DIR = "/usr/local/sauron/";
++$PROG_DIR = "/usr/sauron/";
+ 
+ ########################################################################
+ # database connection setup
+--- sauron-0.7.3.orig/config.in
++++ sauron-0.7.3/config.in
+@@ -8,13 +8,13 @@
+ # general configuration options (you need to configure at least these)
+ 
+ # Base directory for Sauron install
+-$PROG_DIR = "/usr/local/sauron/";
++$PROG_DIR = "/usr/sauron/";
+ 
+ # directory for logfiles
+ $LOG_DIR = "$PROG_DIR/logs/";
+ 
+ # unique server ID (if using multiple www-servers)
+-$SERVER_ID = "fooserver";
++$SERVER_ID = "localhost";
+ 
+ 
+ ########################################################################
+@@ -33,7 +33,6 @@ $DB_USER = "foo";
+ # database (user) password
+ $DB_PASSWORD = "bar";
+ 
+-
+ #########################################################################
+ # advanced configuration options
+ 
